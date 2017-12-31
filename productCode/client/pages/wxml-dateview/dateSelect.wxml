@@ -1,0 +1,10 @@
+<!--pages/dateSelect/dateSelect.wxml-->
+<view>
+  <view class="section">  
+    <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+      <view class="picker">  
+        日期: {{dates}}  
+      </view>  
+    </picker>  
+  </view>  
+</view>

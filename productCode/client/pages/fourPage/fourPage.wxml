@@ -1,0 +1,149 @@
+<!--pages/fourPage/fourPage.wxml-->
+<view class='containers'>
+  <view class='panel'>
+    <!-- <view class='panel-header'>
+      <view class='panel-title'>统计说明</view>
+    </view> -->
+    <view class='panel-body'>
+      <view class='wrap-nav'>
+        <view class='wrap-nav-item'>
+          <image src='../../images/nav-item4.png'></image>
+          <view class='right'>
+            <text class='text-blue'>{{titNum1}}</text>
+            <text class='wrap-nav-title'>项目申报人</text>
+          </view>
+        </view>
+        <view class='wrap-nav-item'>
+          <image src='../../images/nav-item5.png'></image>
+          <view class='right'>
+            <text class='text-blue'>{{titNum2}}</text>
+            <text class='wrap-nav-title'>专家</text>
+          </view>
+        </view>
+        <view class='wrap-nav-item'>
+          <image src='../../images/nav-item6.png'></image>
+          <view class='right'>
+            <text class='text-blue'>{{titNum3}}</text>
+            <text class='wrap-nav-title'>广西高层次人才</text>
+          </view>
+        </view>
+        <!-- <view class='wrap-nav-item'>
+          <image src='../../images/nav-item7.png'></image>
+          <view class='right'>
+            <text class='text-blue'>25663</text>
+            <text class='wrap-nav-title'>创业导师</text>
+          </view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>申报人地区统计</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box col-3'>
+        <view class='layout-item head'>
+          <view class='layout-node'>
+            <text class='text-blue'>地市</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>数量</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>百分比</text>
+          </view>
+        </view>
+        <view class='layout-item' wx:for="{{table2}}">
+          <view class='layout-node'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='layout-node'>
+            <text>{{item.num}}</text>
+          </view>
+          <view class='layout-node'>
+            <text>{{item.proportion}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>申报人单位统计</view>
+    </view>
+    <view class='panel-body'>
+      <canvas canvas-id="columnCanvas" class="canvas"></canvas>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>专家按地区统计</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box col-3'>
+        <view class='layout-item head'>
+          <view class='layout-node'>
+            <text class='text-blue'>地市</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>数量</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>百分比</text>
+          </view>
+        </view>
+        <view class='layout-item' wx:for="{{table4}}">
+          <view class='layout-node'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='layout-node'>
+            <text>{{item.num}}</text>
+          </view>
+          <view class='layout-node'>
+            <text>{{item.proportion}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>专家按单位统计</view>
+    </view>
+    <view class='panel-body'>
+      <canvas canvas-id="ringCanvas" class="canvas"></canvas>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>广西高层次人才统计</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box col-3 line-number'>
+        <view class='layout-item head'>
+          <view class='layout-node wp45'>
+            <text class='text-blue'>人才类别</text>
+          </view>
+          <view class='layout-node wp25'>
+            <text class='text-blue'>数量</text>
+          </view>
+          <view class='layout-node wp20'>
+            <text class='text-blue'>百分比</text>
+          </view>
+        </view>
+        <view class='layout-item' wx:for="{{table6}}">
+          <view class='layout-node wp45'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='layout-node wp25'>
+            <text>{{item.num}}</text>
+          </view>
+          <view class='layout-node wp20'>
+            <text>{{item.proportion}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

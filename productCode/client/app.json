@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/wxml-dateview/dateSelect",
+    "pages/secondPage/secondPage",
+    "pages/threePage/threePage",
+    "pages/fourPage/fourPage"
+  ],
+  "window":{
+    "backgroundColor":"#ffffff",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "聚科技",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#0a89ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "日期筛选",
+        "pagePath": "pages/wxml-dateview/dateSelect",
+        "iconPath": "images/tabbar2.png",
+        "selectedIconPath": "images/tabbar2-actived.png"
+      },
+      {
+        "text": "科技项目",
+        "pagePath": "pages/secondPage/secondPage",
+        "iconPath": "images/tabbar2.png",
+        "selectedIconPath": "images/tabbar2-actived.png"
+      },
+      {
+        "text": "科技单位",
+        "pagePath": "pages/threePage/threePage",
+        "iconPath": "images/tabbar3.png",
+        "selectedIconPath": "images/tabbar3-actived.png"
+      },
+      {
+        "text": "科技工作者",
+        "pagePath": "pages/fourPage/fourPage",
+        "iconPath": "images/tabbar4.png",
+        "selectedIconPath": "images/tabbar4-actived.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000
+  },
+  "debug": true
+}

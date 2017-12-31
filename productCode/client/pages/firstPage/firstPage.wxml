@@ -1,0 +1,314 @@
+<view class='containers'>
+  <view class='wrap-nav'>
+    <view class='wrap-nav-item'>
+      <image src='../../images/nav-item1.png'></image>
+      <text class='text-blue'>25663</text>
+      <text class='wrap-nav-title'>科技项目</text>
+    </view>
+    <view class='wrap-nav-item'>
+      <image src='../../images/nav-item2.png'></image>
+      <text class='text-green'>253</text>
+      <text class='wrap-nav-title'>科技单位</text>
+    </view>
+    <view class='wrap-nav-item'>
+      <image src='../../images/nav-item3.png'></image>
+      <text class='text-reseda'>2663</text>
+      <text class='wrap-nav-title'>科技工作者</text>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>科技项目申报数</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box'>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text class='city'>百色市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>河池市</text>
+            <text class='text-blue number'>237</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>柳州市</text>
+            <text class='text-blue number'>1004</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>来宾市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>桂林市</text>
+            <text class='text-blue number'>2789</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text class='city'>贺州市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>梧州市</text>
+            <text class='text-blue number'>237</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>贵港市</text>
+            <text class='text-blue number'>1004</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>南宁市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>崇左市</text>
+            <text class='text-blue number'>278912222</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text class='city'>钦州市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>玉林市</text>
+            <text class='text-blue number'>237</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>北海市</text>
+            <text class='text-blue number'>1004</text>
+          </view>
+          <view class='layout-node'>
+            <text class='city'>防城港市</text>
+            <text class='text-blue number'>592</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>各处室科技数据统计</view>
+    </view>
+    <view class='panel-body'>
+        <canvas canvas-id="ringCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>九张名片互联网数据在库量</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box col-2'>
+        <view class='layout-item head'>
+          <view class='layout-node'>
+            <text class='text-blue'>九大名片</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>互联网数据</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>高性能材料</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>生态环保产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>综合</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>大健康产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>互联网经济</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>信息技术</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>传统优势产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>海洋开发资源利用</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>优势特色农业</text>
+          </view>
+          <view class='layout-node'>
+            <text>120,22</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>广西科技成果产出统计</view>
+    </view>
+    <view class='panel-body'>
+      <canvas canvas-id="columnCanvas" class="canvas"></canvas>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>热点行业互联网数据在库量</view>
+    </view>
+    <view class='panel-body'>
+      <view class='layout-box col-3'>
+        <view class='layout-item head'>
+          <view class='layout-node'>
+            <text class='text-blue'>热点行业</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>数量总计</text>
+          </view>
+          <view class='layout-node'>
+            <text class='text-blue'>占比</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>高性能材料</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>生态环保产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>综合</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>大健康产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>互联网经济</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>信息技术</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>传统优势产业</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>海洋开发资源利用</text>
+          </view>
+          <view class='layout-node'>
+            <text>12,483</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+        <view class='layout-item'>
+          <view class='layout-node'>
+            <text>优势特色农业</text>
+          </view>
+          <view class='layout-node'>
+            <text>120,22</text>
+          </view>
+          <view class='layout-node'>
+            <text>33.23%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
