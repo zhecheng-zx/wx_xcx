@@ -52,10 +52,8 @@ Page({
       endTime: "2017-11-30 00:00:00"
     },
     table5: {},
-    dates:{
-      beginDate: '2017-01-01',
-      endDate: ''
-    },
+    beginDate: '2017-01-01',
+    endDate: '',
     selectYear: ''
   },
 
@@ -64,9 +62,7 @@ Page({
  */
   bindDateChange1: function (e) {
     this.setData({
-      dates: {
-        beginDate: e.detail.value,
-      }
+      beginDate: e.detail.value
     });
   },
 
@@ -75,9 +71,7 @@ Page({
    */
   bindDateChange2: function (e) {
     this.setData({
-      dates: {
-        endDate: e.detail.value,
-      }
+      endDate: e.detail.value
     });
   },
 
@@ -137,10 +131,8 @@ Page({
     var endDate = year + "-" + month + "-" + day;
     var startDate = parseInt(year - 1) + '-' + month +'-'+day;
     that.setData({
-      dates: {
-        endDate: endDate,
-        beginDate: startDate
-      },
+      endDate: endDate,
+      beginDate: startDate,
       selectYear: year
     });
 

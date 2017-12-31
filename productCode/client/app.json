@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/wxml-dateview/dateSelect",
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
     "pages/fourPage/fourPage"
@@ -18,12 +17,6 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
-      {
-        "text": "日期筛选",
-        "pagePath": "pages/wxml-dateview/dateSelect",
-        "iconPath": "images/tabbar2.png",
-        "selectedIconPath": "images/tabbar2-actived.png"
-      },
       {
         "text": "科技项目",
         "pagePath": "pages/secondPage/secondPage",

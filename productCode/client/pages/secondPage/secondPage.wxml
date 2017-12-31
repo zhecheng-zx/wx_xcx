@@ -13,7 +13,7 @@
     </view>
     <view class='result-box'>
       <view class='blue'>7654</view>
-      <view class='text-gray'>{{selectYear}}已完成受理(项)</view>
+      <view class='text-gray'>{{selectYear}}年，已完成受理(项)</view>
       <view class='info-box'>
         <view class='left'>
           <view class='num'>1527</view>
@@ -31,16 +31,16 @@
     <view class='panel-body item'>
       <view class='date-box item-row'>
       <view class='left'>
-         <picker mode="date" value="{{dates.beginDate}}" start="1978-01-01" end="{{dates.endDate}}" bindchange="bindDateChange1">  
+         <picker mode="date" value="{{beginDate}}" start="1978-01-01" end="{{endDate}}" bindchange="bindDateChange1">  
             <view class="picker">  
-              开始日期: <view class='date'>{{dates.beginDate}}</view>  
+              开始日期: <view class='date'>{{beginDate}}</view>  
             </view>  
           </picker> 
       </view>
       <view class='right'>
-        <picker mode="date" value="{{dates.endDate}}" bindchange="bindDateChange2">  
+        <picker mode="date" value="{{endDate}}" bindchange="bindDateChange2">  
           <view class="picker">  
-            结束日期: <view class='date'>{{dates.endDate}}  </view>
+            结束日期: <view class='date'>{{endDate}}  </view>
           </view>  
         </picker>  
       </view>
