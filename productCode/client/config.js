@@ -40,6 +40,8 @@ var config = {
         //科技项目按地区统计接口
         secondPageUrl5: `${host2}/aggrProposalArea`,
 
+        secondPageUrl6: `${host2}/aggrProposalCount`,
+
         //科技单位按类别统计接口
         threePageUrl: `${host2}/aggrOrgTotalApp`,
 
@@ -59,7 +61,7 @@ var config = {
         fourPageUrl3: `${host2}/aggrPersonOrgType`,
 
         //科技工作者按高层次人才统计接口
-        fourPageUrl4: `${host2}/aggrPersonTalent`
+        fourPageUrl4: `${host2}/aggrPersonTalent`,
     }
 };
 

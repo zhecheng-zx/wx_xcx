@@ -45,7 +45,11 @@ Page({
       endTime: "2017-11-30 00:00:00"
     },
     charts3: {},
-    data4: {},
+    data4: {
+      aggrField: "org_code",
+      startTime: "2016-12-31 00:00:00",
+      endTime: "2017-11-30 00:00:00"
+    },
     charts4: {},
     data5: {
       startTime: "2016-12-31 00:00:00",
@@ -54,7 +58,10 @@ Page({
     table5: {},
     beginDate: '2017-01-01',
     endDate: '',
-    selectYear: ''
+    selectYear: '',
+    YIWANCHENG:10,
+    LIXIAGl:0,
+    wanyuan: 20
   },
 
 /**
@@ -73,14 +80,17 @@ Page({
     this.setData({
       endDate: e.detail.value
     });
+    this.loadAggrProposalCount();
   },
 
   loadAggrProposalCount: function(e){
-    var beginDate = new Date(this.dates.beginDate).getTime(),
-        endDate = new Date(this.dates.endDate).getTime();
+    var that = this;
+    var beginDate = new Date(that.data.beginDate).getTime(),
+        endDate = new Date(that.data.endDate).getTime();
     if(beginDate > endDate){
       return '开始时间不能大于结束时间';
     }
+    that.panel2Data();
   },
 
   /**
@@ -92,50 +102,43 @@ Page({
     this.setData({
       selectYear: year
     });
-
-    wx.request({
-      url: `${config.service.aggrProposalCount}`,
-      data: {
-        stat_year: year
-      },
-      header: {
-        "Content-Type": "application/json"
-      },
-      success: function(result){
-
-      },
-      fail(error) {
-        util.showModel('请求失败', error);
-        console.log('request fail', error);
-      }
-    })
+    this.panel1Data();
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  panel1Data:function(){
+    var that = this;
+    wx.request({
+      url: `${config.service.secondPageUrl6}`,
+      data: { stat_year: '' + that.data.selectYear },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        var tableData = results.data;
+        if (results.status != 1 && results.data) {
+          that.setData({
+            YIWANCHENG: tableData[0].count,
+            LIXIAGl: tableData[2].count,
+            wanyuan: tableData[1].count
+          });
+        }
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
+  },
+  panel2Data: function () {
     util.showBusy('请求中...');
     var that = this;
-
-    var now = new Date(),
-      year = now.getFullYear(),
-      month = parseInt(now.getMonth() + 1),
-      day = now.getDate();
-    var endDate = year + "-" + month + "-" + day;
-    var startDate = parseInt(year - 1) + '-' + month +'-'+day;
-    that.setData({
-      endDate: endDate,
-      beginDate: startDate,
-      selectYear: year
-    });
-
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -143,6 +146,21 @@ Page({
     } catch (e) {
       console.error('getSystemInfoSync failed!');
     }
+
+    that.data.data.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data.endTime = that.data.endDate + ' 00:00:00';
+
+    that.data.data2.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data2.endTime = that.data.endDate + ' 00:00:00';
+
+    that.data.data3.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data3.endTime = that.data.endDate + ' 00:00:00';
+
+    that.data.data4.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data4.endTime = that.data.endDate + ' 00:00:00';
+
+    that.data.data5.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data5.endTime = that.data.endDate + ' 00:00:00';
     /**
      * 项目申报工作进度统计
      */
@@ -150,13 +168,13 @@ Page({
       url: `${config.service.secondPageUrl}`,
       data: that.data.data,
       header: {
-        "Content-Type":"application/json"
+        "Content-Type": "application/json"
       },
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
         var tableData = results.data;
-        if (results.status != 1 && results.data){
+        if (results.status != 1 && results.data) {
           var tableRow = resetData(tableData);
           that.setData({
             table1: tableRow
@@ -220,7 +238,7 @@ Page({
             obj.format = function () {
               console.log(this.name + ' ' + this.data);
               var name = this.name, data = this.data,
-              nd = data;
+                nd = data;
               return nd;
             };
             tableRow.push(obj);
@@ -258,7 +276,7 @@ Page({
      */
     wx.request({
       url: `${config.service.secondPageUrl4}`,
-      data: that.data.data2,
+      data: that.data.data4,
       header: {
         "Content-Type": "application/json"
       },
@@ -329,9 +347,27 @@ Page({
         console.log('request fail', error);
       }
     });
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    util.showBusy('请求中...');
+    var that = this;
 
-
-    
+    var now = new Date(),
+      year = now.getFullYear(),
+      month = parseInt(now.getMonth() + 1),
+      day = now.getDate();
+    var endDate = year + "-" + month + "-" + day;
+    var startDate = parseInt(year - 1) + '-' + month +'-'+day;
+    that.setData({
+      endDate: endDate,
+      beginDate: startDate,
+      selectYear: year
+    });
+    that.panel1Data();
+    that.panel2Data();
     // ringChart.addEventListener('renderComplete', () => {
     //   console.log('renderComplete');
     // });

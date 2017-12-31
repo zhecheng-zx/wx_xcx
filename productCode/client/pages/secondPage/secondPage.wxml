@@ -4,7 +4,7 @@
     <view class='title'>广西科技大数据平台提供服务</view>
     <view class='item-row'>
       <view class='left'>
-         <picker mode="date" value="{{selectYear}}" bindchange="yearChange" fields="year">  
+         <picker mode="date" value="{{selectYear}}" bindchange="yearChange" start="2010-12-31" fields="year">  
             <view class="picker">  
               选择年份: <view class='date'>{{selectYear}}</view>  
             </view>  
@@ -12,15 +12,15 @@
       </view>
     </view>
     <view class='result-box'>
-      <view class='blue'>7654</view>
+      <view class='blue'>{{YIWANCHENG}}</view>
       <view class='text-gray'>{{selectYear}}年，已完成受理(项)</view>
       <view class='info-box'>
         <view class='left'>
-          <view class='num'>1527</view>
+          <view class='num'>{{LIXIAGl}}</view>
           <view class='text'>立项</view>
         </view>
         <view class='right'>
-            <view class='num'>1982937.22</view>
+            <view class='num'>{{wanyuan}}</view>
             <view class='text'>万元</view>
         </view>
       </view>
@@ -31,7 +31,7 @@
     <view class='panel-body item'>
       <view class='date-box item-row'>
       <view class='left'>
-         <picker mode="date" value="{{beginDate}}" start="1978-01-01" end="{{endDate}}" bindchange="bindDateChange1">  
+         <picker mode="date" value="{{beginDate}}" start="2010-12-31" end="{{endDate}}" bindchange="bindDateChange1">  
             <view class="picker">  
               开始日期: <view class='date'>{{beginDate}}</view>  
             </view>  
