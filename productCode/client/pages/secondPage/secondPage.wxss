@@ -5,9 +5,14 @@ color: #990000;
  font-size: 40px;
 }
 .bbb{
-color: blue;
+color: #0a89ff;
  display: inline-block;
  font-size: 20px;
 }
 .ccc{
+  font-size: 12px;
+}
+.ddd{
+color: black;
+ display: inline-block;
 }

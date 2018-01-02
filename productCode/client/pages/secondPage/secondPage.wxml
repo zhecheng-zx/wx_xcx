@@ -25,20 +25,21 @@
       </view>
     </view>
     <view class='result-box'>
-      
-      <view class='text-gray'>已完成受理<view class="aaa">{{YIWANCHENG}}</view>项</view>
+      <view class='text-gray'><view class='ddd'>已完成受理</view>
+        <view class="aaa">{{YIWANCHENG}}</view><view class='ddd'>项</view>
+        <view class="ccc">数据同步于广西科技项目管理信息系统</view>
+      </view>
       <view class='text-gray'>
         <view class='left'>
-          
-          <view class='text'>立项<view class='bbb'>{{LIXIAGl}}</view>项</view>
+          <view class='text'>立项
+            <view class='bbb'>{{LIXIAGl}}</view>项</view>
         </view>
         <view class='right'>
-          
-          <view class='text'>立项金额<view class='bbb'>{{wanyuan}}</view>万元</view>
+          <view class='text'>立项金额
+            <view class='bbb'>{{wanyuan}}</view>万元</view>
         </view>
       </view>
     </view>
-    <view class='bottom'>数据同步于广西科技项目管理信息系统</view>
   </view>
 
   <view class='panel'>
