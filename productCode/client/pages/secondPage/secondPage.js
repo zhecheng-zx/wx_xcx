@@ -8,7 +8,7 @@ var resetData = function (tableData) {
   var tableRow = [];
   var count = 0;
   for (var i in tableData) {
-    var obj = {};
+    var obj = {}; 
     obj.name = i,
       obj.num = tableData[i];
     count += tableData[i];
