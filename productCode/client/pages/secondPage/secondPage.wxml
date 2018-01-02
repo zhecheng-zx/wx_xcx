@@ -41,22 +41,7 @@
       </view>
     </view>
   </view>
-<view class='panel'>
-    <view class='panel-header'>
-      <view class='panel-title'>申报项目类别分类统计</view>
-    </view>
-    <view class='panel-body'>
-      <canvas canvas-id="ringCanvas" class="canvas"></canvas>
-    </view>
-  </view>
-  <view class='panel'>
-    <view class='panel-header'>
-      <view class='panel-title'>申报项目单位分类统计</view>
-    </view>
-    <view class='panel-body'>
-      <canvas canvas-id="columnCanvas" class="canvas"></canvas>
-    </view>
-  </view>
+
   <view class='panel'>
     <view class='panel-header'>
       <view class='panel-title'>项目申报工作进度统计</view>
