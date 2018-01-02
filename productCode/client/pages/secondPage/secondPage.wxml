@@ -1,47 +1,66 @@
 <!--pages/secondPage/secondPage.wxml-->
 <view class='containers'>
-  <view class='item'>
+ <view class='item'>
     <view class='title'>广西科技大数据平台提供服务</view>
-    <view class='panel'>
-      <view class='panel-body item'>
-        <view class='date-box item-row'>
-          <view class='left'>
-            <picker mode="date" value="{{beginDate}}" start="2010-12-31" end="{{endDate}}" bindchange="bindDateChange1">
-              <view class="picker">
-                开始日期:
-                <view class='date'>{{beginDate}}</view>
-              </view>
-            </picker>
+    <view class='date-box item-row'>
+      <view class='left'>
+        <picker mode="date" value="{{beginDate}}" start="2010-12-31" end="{{endDate}}" bindchange="bindDateChange1">
+          <view class="picker">
+            开始日期:
+            <view class='date'>{{beginDate}}</view>
           </view>
-          <view class='right'>
-            <picker mode="date" value="{{endDate}}" bindchange="bindDateChange2">
-              <view class="picker">
-                结束日期:
-                <view class='date'>{{endDate}} </view>
-              </view>
-            </picker>
+        </picker>
+      </view>
+      <view class='right'>
+        <picker mode="date" value="{{endDate}}" bindchange="bindDateChange2">
+          <view class="picker">
+            结束日期:
+            <view class='date'>{{endDate}} </view>
           </view>
-        </view>
+        </picker>
       </view>
     </view>
     <view class='result-box'>
-      <view class='text-gray'><view class='ddd'>已完成受理</view>
-        <view class="aaa">{{YIWANCHENG}}</view><view class='ddd'>项</view>
-        <view class="ccc">数据同步于广西科技项目管理信息系统</view>
+      <view>
+        已完成受理
+        <view class="total-num">{{YIWANCHENG}}</view>
+        项
+        <view class="text-gray">数据同步于广西科技项目管理信息系统</view>
       </view>
-      <view class='text-gray'>
+      <view class='info-box'>
         <view class='left'>
-          <view class='text'>立项
-            <view class='bbb'>{{LIXIAGl}}</view>项</view>
+          <view class='text'>
+            立项
+            <view class='num'>{{LIXIAGl}}</view>
+            项
+          </view>
         </view>
         <view class='right'>
-          <view class='text'>立项金额
-            <view class='bbb'>{{wanyuan}}</view>万元</view>
+          <view class='text'>
+            立项金额
+            <view class='num'>{{wanyuan}}</view>
+            万元
+          </view>
         </view>
       </view>
     </view>
+</view>
+<view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>申报项目类别分类统计</view>
+    </view>
+    <view class='panel-body'>
+      <canvas canvas-id="ringCanvas" class="canvas"></canvas>
+    </view>
   </view>
-
+  <view class='panel'>
+    <view class='panel-header'>
+      <view class='panel-title'>申报项目单位分类统计</view>
+    </view>
+    <view class='panel-body'>
+      <canvas canvas-id="columnCanvas" class="canvas"></canvas>
+    </view>
+  </view>
   <view class='panel'>
     <view class='panel-header'>
       <view class='panel-title'>项目申报工作进度统计</view>
