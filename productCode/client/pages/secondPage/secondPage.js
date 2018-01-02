@@ -56,6 +56,10 @@ Page({
       endTime: "2017-11-30 00:00:00"
     },
     table5: {},
+    data6: {
+      startTime: "2016-12-31 00:00:00",
+      endTime: "2017-11-30 00:00:00"
+    },
     beginDate: '2017-01-01',
     endDate: '',
     selectYear: '',
@@ -161,6 +165,35 @@ Page({
 
     that.data.data5.startTime = that.data.beginDate + ' 00:00:00';
     that.data.data5.endTime = that.data.endDate + ' 00:00:00';
+
+    that.data.data6.startTime = that.data.beginDate + ' 00:00:00';
+    that.data.data6.endTime = that.data.endDate + ' 00:00:00';
+    /**
+     * 三个数
+     */
+    wx.request({
+      url: `${config.service.secondPageUrl6}`,
+      data: that.data.data6,
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        var tableData = results.data;
+        if (results.status != 1 && results.data) {
+          that.setData({
+            YIWANCHENG: tableData[0].count,
+            LIXIAGl: tableData[2].count,
+            wanyuan: tableData[1].count
+          });
+        }
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
     /**
      * 项目申报工作进度统计
      */
