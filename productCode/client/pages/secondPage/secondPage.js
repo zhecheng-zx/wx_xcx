@@ -75,6 +75,7 @@ Page({
     this.setData({
       beginDate: e.detail.value
     });
+    this.loadAggrProposalCount();
   },
 
   /**
@@ -97,48 +98,12 @@ Page({
     that.panel2Data();
   },
 
-  /**
-   * 
-   * 选择年份改变事件
-   */
-  yearChange: function(e){
-    var year = e.detail.value;
-    this.setData({
-      selectYear: year
-    });
-    this.panel1Data();
-  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  },
-  panel1Data:function(){
-    var that = this;
-    wx.request({
-      url: `${config.service.secondPageUrl6}`,
-      data: { stat_year: '' + that.data.selectYear },
-      header: {
-        "Content-Type": "application/json"
-      },
-      success(result) {
-        util.showSuccess('请求成功完成')
-        var results = result.data;
-        var tableData = results.data;
-        if (results.status != 1 && results.data) {
-          that.setData({
-            YIWANCHENG: tableData[0].count,
-            LIXIAGl: tableData[2].count,
-            wanyuan: tableData[1].count
-          });
-        }
-      },
-      fail(error) {
-        util.showModel('请求失败', error);
-        console.log('request fail', error);
-      }
-    });
   },
   panel2Data: function () {
     util.showBusy('请求中...');
@@ -399,7 +364,7 @@ Page({
       beginDate: startDate,
       selectYear: year
     });
-    that.panel1Data();
+    //that.panel1Data();
     that.panel2Data();
     // ringChart.addEventListener('renderComplete', () => {
     //   console.log('renderComplete');

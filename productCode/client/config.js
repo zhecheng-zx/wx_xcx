@@ -4,7 +4,8 @@
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://f7ihczsu.qcloud.la',
-    host2 = 'http://58.16.181.24:9210/mis-web/platform/';
+    //host2 = 'http://58.16.181.24:9210/mis-web/platform/';
+  host2 = 'https://bigdata.gxst.gov.cn/mis-web/platform/';
 
 var config = {
 
