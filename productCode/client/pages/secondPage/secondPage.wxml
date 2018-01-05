@@ -47,7 +47,7 @@
 </view>
 <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目按五大类统计</view>
+      <view class='panel-title'>科技项目申报量按五大类统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="ringCanvas" class="canvas"></canvas>
@@ -55,7 +55,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目按单位统计</view>
+      <view class='panel-title'>科技项目申报量按单位统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="columnCanvas" class="canvas"></canvas>
@@ -63,7 +63,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目按工作进度统计</view>
+      <view class='panel-title'>科技项目申报量按工作进度统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -94,7 +94,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目按处室统计</view>
+      <view class='panel-title'>科技项目申报量按处室统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -126,7 +126,7 @@
   
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目按地区统计</view>
+      <view class='panel-title'>科技项目申报量按地区统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>

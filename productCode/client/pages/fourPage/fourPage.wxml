@@ -39,7 +39,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>申报人地区统计</view>
+      <view class='panel-title'>项目申报人按地市统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -70,7 +70,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>申报人单位统计</view>
+      <view class='panel-title'>项目申报人按单位类型统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="columnCanvas" class="canvas"></canvas>
@@ -78,7 +78,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>专家按地区统计</view>
+      <view class='panel-title'>专家按地市统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -109,7 +109,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>专家按单位统计</view>
+      <view class='panel-title'>专家按单位类型统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="ringCanvas" class="canvas"></canvas>
