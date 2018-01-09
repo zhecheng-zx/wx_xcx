@@ -2,7 +2,7 @@
 <view class='containers'>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>在库单位统计</view>
+      <view class='panel-title'>申报单位统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="ringCanvas" class="canvas"></canvas>

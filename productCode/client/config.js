@@ -27,7 +27,7 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
         
         //科技项目按状态统计接口
-        secondPageUrl: `${host2}/aggrProposalStatus`,
+        secondPageUrl: `${host2}/aggrProposalStatusXcx`,
 
         //科技项目按处室统计接口
         secondPageUrl2: `${host2}/aggrProposalAdminOrgName`,

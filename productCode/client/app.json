@@ -24,7 +24,7 @@
         "selectedIconPath": "images/tabbar2-actived.png"
       },
       {
-        "text": "科技单位",
+        "text": "申报单位",
         "pagePath": "pages/threePage/threePage",
         "iconPath": "images/tabbar3.png",
         "selectedIconPath": "images/tabbar3-actived.png"
