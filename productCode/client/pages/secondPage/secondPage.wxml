@@ -156,13 +156,10 @@
     </view>
   </view>
 
-  <modal hidden="{{hiddenmodalput}}" title="请输登录" confirm-text="提交" cancel-text="重置" bindcancel="resetClick" bindconfirm="confirmClick">  
+  <modal hidden="{{hiddenmodalput}}" title="请输安全码" confirm-text="提交" cancel-text="重置" bindcancel="resetClick" bindconfirm="confirmClick">  
     <view class='login-form'>
       <view class="section">
-        <input name="input" placeholder="请输入用户名"/>
-      </view>
-      <view class="section">
-        <input name="input" placeholder="请输入密码" />
+        <input name="input" placeholder="请输入" />
       </view>
     </view> 
 </modal> 

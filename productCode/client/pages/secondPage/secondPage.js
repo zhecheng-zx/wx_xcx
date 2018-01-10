@@ -63,18 +63,20 @@ Page({
     beginDate: '2017-01-01',
     endDate: '',
     selectYear: '',
-    YIWANCHENG:10,
+    YIWANCHENG:0,
     LIXIAGl:0,
-    wanyuan: 20,
+    wanyuan: 0,
     hiddenmodalput: false, //onReady里写方法判断是否登录，未登录：false，已登录：true
   },
   //弹窗的重置按钮点击事件
   resetClick: function () {
-
+    
   },
   //弹窗的确认按钮点击事件
   confirmClick: function(){
-
+    this.setData({
+      hiddenmodalput: true
+    });  
   }, 
 /**
  * 开始日期改变事件
