@@ -2,7 +2,8 @@
   "pages":[
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
-    "pages/fourPage/fourPage"
+    "pages/fourPage/fourPage",
+    "pages/login/login"
   ],
   "window":{
     "backgroundColor":"#ffffff",

@@ -8,7 +8,7 @@ var resetData = function (tableData) {
   var tableRow = [];
   var count = 0;
   for (var i in tableData) {
-    var obj = {}; 
+    var obj = {};
     obj.name = i,
       obj.num = tableData[i];
     count += tableData[i];
@@ -32,7 +32,7 @@ Page({
       startTime: "2016-12-31 00:00:00",
       endTime: "2017-11-30 00:00:00"
     },
-    table1: {}, 
+    table1: {},
     data2: {
       aggrField: "admin_org_codes",
       startTime: "2016-12-31 00:00:00",
@@ -63,26 +63,14 @@ Page({
     beginDate: '2017-01-01',
     endDate: '',
     selectYear: '',
-    YIWANCHENG:0,
-    LIXIAGl:0,
+    YIWANCHENG: 0,
+    LIXIAGl: 0,
     wanyuan: 0,
-    hiddenmodalput: false, //onReady里写方法判断是否登录，未登录：false，已登录：true
   },
-  //弹窗的重置按钮点击事件
-  resetClick: function () {
-    
-  },
-  //弹窗的确认按钮点击事件
-  confirmClick: function(){
-    var that = this;
-    this.setData({
-      hiddenmodalput: true
-    });  
-    that.panel2Data();
-  }, 
-/**
- * 开始日期改变事件
- */
+
+  /**
+   * 开始日期改变事件
+   */
   bindDateChange1: function (e) {
     this.setData({
       beginDate: e.detail.value
@@ -99,11 +87,11 @@ Page({
     this.loadAggrProposalCount();
   },
 
-  loadAggrProposalCount: function(e){
+  loadAggrProposalCount: function (e) {
     var that = this;
     var beginDate = new Date(that.data.beginDate).getTime(),
-        endDate = new Date(that.data.endDate).getTime();
-    if(beginDate > endDate){
+      endDate = new Date(that.data.endDate).getTime();
+    if (beginDate > endDate) {
       return '开始时间不能大于结束时间';
     }
     that.panel2Data();
@@ -113,7 +101,7 @@ Page({
    * 
    * 选择年份改变事件
    */
-  yearChange: function(e){
+  yearChange: function (e) {
     var year = e.detail.value;
     this.setData({
       selectYear: year
@@ -126,7 +114,7 @@ Page({
    */
   onLoad: function (options) {
   },
-  panel1Data:function(){
+  panel1Data: function () {
     var that = this;
     wx.request({
       url: `${config.service.secondPageUrl6}`,
@@ -400,12 +388,14 @@ Page({
     //util.showBusy('请求中...');
     var that = this;
 
+    wx.navigateTo({ url: '/pages/login/login' }) ;
+  
     var now = new Date(),
       year = now.getFullYear(),
       month = parseInt(now.getMonth() + 1),
       day = now.getDate();
     var endDate = year + "-" + month + "-" + day;
-    var startDate = parseInt(year - 1) + '-' + month +'-'+day;
+    var startDate = parseInt(year - 1) + '-' + month + '-' + day;
     that.setData({
       endDate: endDate,
       beginDate: startDate,
@@ -421,43 +411,42 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function () { 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   preventTouchMove: function () {
   }
