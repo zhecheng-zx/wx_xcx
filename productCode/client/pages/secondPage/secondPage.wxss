@@ -16,3 +16,24 @@ color: #0a89ff;
 color: black;
  display: inline-block;
 }
+
+.login-form{
+  width: 800rpx;
+  height: 280rpx;
+}
+
+.login-form .section{
+  margin: 40rpx auto;
+}
+
+.login .section input{
+  border: 2rpx solid #ededde;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.login .section.forgetPwd{
+  font-size: 24rpx;
+  color: #808080;
+  text-align: right;
+}

@@ -1,7 +1,7 @@
 <!--pages/secondPage/secondPage.wxml-->
 <view class='containers'>
  <view class='item'>
-    <view class='title'>-- 广西科技大数据平台提供服务 --</view>
+    <view class='title'>广西科技大数据平台提供服务</view>
     <view class='date-box item-row'>
       <view class='left'>
         <picker mode="date" value="{{beginDate}}" start="2010-12-31" end="{{endDate}}" bindchange="bindDateChange1">
@@ -47,7 +47,7 @@
 </view>
 <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目申报量按五大类统计</view>
+      <view class='panel-title'>申报项目类别分类统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="ringCanvas" class="canvas"></canvas>
@@ -55,7 +55,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目申报量按单位统计</view>
+      <view class='panel-title'>申报项目单位分类统计</view>
     </view>
     <view class='panel-body'>
       <canvas canvas-id="columnCanvas" class="canvas"></canvas>
@@ -63,7 +63,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目申报量按工作进度统计</view>
+      <view class='panel-title'>项目申报工作进度统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -94,7 +94,7 @@
   </view>
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目申报量按处室统计</view>
+      <view class='panel-title'>申报项目处室分类统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -126,7 +126,7 @@
   
   <view class='panel'>
     <view class='panel-header'>
-      <view class='panel-title'>科技项目申报量按地区统计</view>
+      <view class='panel-title'>申报项目地区分类统计</view>
     </view>
     <view class='panel-body'>
       <view class='layout-box col-3'>
@@ -155,4 +155,15 @@
       </view>
     </view>
   </view>
+
+  <modal hidden="{{hiddenmodalput}}" title="请输登录" confirm-text="提交" cancel-text="重置" bindcancel="resetClick" bindconfirm="confirmClick">  
+    <view class='login-form'>
+      <view class="section">
+        <input name="input" placeholder="请输入用户名"/>
+      </view>
+      <view class="section">
+        <input name="input" placeholder="请输入密码" />
+      </view>
+    </view> 
+</modal> 
 </view>
