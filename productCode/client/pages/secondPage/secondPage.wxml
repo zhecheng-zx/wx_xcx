@@ -156,7 +156,7 @@
     </view>
   </view>
 
-  <modal hidden="{{hiddenmodalput}}" title="请输安全码" confirm-text="提交" cancel-text="重置" bindcancel="resetClick" bindconfirm="confirmClick">  
+  <modal hidden="{{hiddenmodalput}}" title="请输安全码" confirm-text="提交" cancel-text="重置" bindcancel="resetClick" bindconfirm="confirmClick" catchtouchmove="preventTouchMove">  
     <view class='login-form'>
       <view class="section">
         <input name="input" placeholder="请输入" />

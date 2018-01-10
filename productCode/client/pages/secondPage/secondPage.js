@@ -74,9 +74,11 @@ Page({
   },
   //弹窗的确认按钮点击事件
   confirmClick: function(){
+    var that = this;
     this.setData({
       hiddenmodalput: true
     });  
+    that.panel2Data();
   }, 
 /**
  * 开始日期改变事件
@@ -395,7 +397,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    util.showBusy('请求中...');
+    //util.showBusy('请求中...');
     var that = this;
 
     var now = new Date(),
@@ -409,8 +411,8 @@ Page({
       beginDate: startDate,
       selectYear: year
     });
-    that.panel1Data();
-    that.panel2Data();
+    //that.panel1Data();
+    //that.panel2Data();
     // ringChart.addEventListener('renderComplete', () => {
     //   console.log('renderComplete');
     // });    
@@ -456,5 +458,7 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  preventTouchMove: function () {
   }
 })
