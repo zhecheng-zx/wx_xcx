@@ -68,6 +68,6 @@ Page({
    */
   setLogin: function () {
     getApp().data.loginFlag="1";
-    wx.navigateTo({ url: '/pages/secondPage/secondPage' });
+    wx.switchTab({ url: '/pages/secondPage/secondPage' });
   },
 })
