@@ -13,7 +13,7 @@ var config = {
     service: {
         host,
         host2,
-
+        loginURL1: `${host2}/xcxLogin`,
         // 登录地址，用于建立会话
         loginUrl: `${host}/weapp/login`,
 
