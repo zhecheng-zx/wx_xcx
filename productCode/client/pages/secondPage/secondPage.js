@@ -47,7 +47,7 @@ Page({
     charts3: {},
     data4: {
       aggrField: "org_code",
-      startTime: "2016-12-31 00:00:00",
+      startTime: "2016-12-31 00:00:00", 
       endTime: "2017-11-30 00:00:00"
     },
     charts4: {},
@@ -385,10 +385,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    //util.showBusy('请求中...');
+    util.showBusy('请求中...');
     var that = this;
-
-    wx.navigateTo({ url: '/pages/login/login' }) ;
+    if (getApp().data.loginFlag==0){
+      wx.navigateTo({ url: '/pages/login/login' });
+    }
+    
   
     var now = new Date(),
       year = now.getFullYear(),
@@ -402,7 +404,7 @@ Page({
       selectYear: year
     });
     //that.panel1Data();
-    //that.panel2Data();
+      that.panel2Data();
     // ringChart.addEventListener('renderComplete', () => {
     //   console.log('renderComplete');
     // });    

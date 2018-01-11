@@ -7,7 +7,7 @@
         <input name="input" placeholder="请输入密码" />
       </view>
       <view class="btn-area">
-        <button formType="submit">登录</button>
+        <button  bindtap="setLogin">登录</button>
       </view>
     </view> 
 </view>

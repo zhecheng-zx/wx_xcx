@@ -62,5 +62,12 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  setLogin: function () {
+    getApp().data.loginFlag="1";
+    wx.navigateTo({ url: '/pages/secondPage/secondPage' });
+  },
 })
