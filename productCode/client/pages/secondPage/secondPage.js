@@ -388,7 +388,7 @@ Page({
     util.showBusy('请求中...');
     var that = this;
     if (getApp().data.loginFlag==0){
-      wx.navigateTo({ url: '/pages/login/login' });
+      wx.redirectTo({ url: '/pages/login/login' });
     }
     
   

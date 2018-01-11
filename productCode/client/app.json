@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/login/login",
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
-    "pages/fourPage/fourPage",
-    "pages/login/login"
+    "pages/fourPage/fourPage"
+    
   ],
   "window":{
     "backgroundColor":"#ffffff",
