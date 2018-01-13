@@ -10,8 +10,8 @@
     "backgroundColor":"#ffffff",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "聚科技",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "科技项目管理",
+    "navigationBarTextStyle":"black"  
   },
   "tabBar": {
     "color": "#999999",
