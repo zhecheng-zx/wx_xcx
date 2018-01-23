@@ -1,7 +1,7 @@
 <!--pages/secondPage/secondPage.wxml-->
 <view class='containers'>
  <view class='item'>
-    <view class='title'>广西科技大数据平台提供服务</view>
+    <view class='title'>-- 广西科技大数据平台提供服务 --</view>
     <view class='date-box item-row'>
       <view class='left'>
         <picker mode="date" value="{{beginDate}}" start="2010-12-31" end="{{endDate}}" bindchange="bindDateChange1">

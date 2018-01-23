@@ -75,6 +75,7 @@ Page({
     this.setData({
       beginDate: e.detail.value
     });
+    this.loadAggrProposalCount();
   },
 
   /**
@@ -92,6 +93,7 @@ Page({
     var beginDate = new Date(that.data.beginDate).getTime(),
       endDate = new Date(that.data.endDate).getTime();
     if (beginDate > endDate) {
+      //util.showModel('系统提示', '开始时间不能大于结束时间');
       return '开始时间不能大于结束时间';
     }
     that.panel2Data();
