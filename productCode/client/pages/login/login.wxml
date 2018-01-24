@@ -1,9 +1,9 @@
 <view class='login'>
   <view class='login-form'>
-      <!--<view class="section">
-        <input  value="gxkjt_user" name="username" placeholder="请输入用户名" bindinput ="userNameInput"/>
+      <view class="section">
+        <input  value="" name="username" placeholder="请输入用户名" bindinput ="userNameInput"/>
       </view>
-      -->
+      
       <view class="section">
         <input type="password" name="input" placeholder="请输入密码" bindinput="passWdInput"/>
       </view>

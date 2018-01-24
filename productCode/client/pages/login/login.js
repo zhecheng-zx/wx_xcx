@@ -84,8 +84,8 @@ Page({
     console.log("用户名：" + this.data.userName + " 密码：" + this.data.userPwd);
     var that = this;
     wx.request({
-      url: `${config.service.loginURL1}`,
-      data: { username: '' + 'gxkjt_user', password: '' + that.data.userPwd },
+      url: 'http://localhost:8080/mis-web/platform/xcxLogin', //`${config.service.loginURL1}`,
+      data: { username: '' + that.data.userName, password: '' + that.data.userPwd },
       header: {
         "Content-Type": "application/json"
       },
@@ -95,9 +95,19 @@ Page({
         var tableData = results.data;
         if (results.status != 1 && results.data.length>=1) {
           getApp().data.loginFlag = "1";
-          wx.switchTab({ url: '/pages/secondPage/secondPage' });
+          if (results.data[0].role=="1"){
+            wx.switchTab({ url: '/pages/secondPage/secondPage' });
+          }else{
+            if (results.data[0].flag == "0") {
+              util.showModel('系统提示', '首次登录带你去修改密码');
+            }else{
+              util.showModel('系统提示', '你要查看的OA界面正在建设中');
+            }
+            
+          }
+          
         }else{
-          util.showModel('系统提示','用户名或密码输入错误')
+          util.showModel('系统提示','用户名或密码输入错误');
         }
       },
       fail(error) {
