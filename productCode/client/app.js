@@ -8,6 +8,7 @@ App({
         qcloud.setLoginUrl(config.service.loginUrl)
     },
     data: {
-      loginFlag: "0"
+      loginFlag: "0",
+      userName: ""
     }  
 })

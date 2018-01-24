@@ -99,7 +99,9 @@ Page({
             wx.switchTab({ url: '/pages/secondPage/secondPage' });
           }else{
             if (results.data[0].flag == "0") {
-              util.showModel('系统提示', '首次登录带你去修改密码');
+              //util.showModel('系统提示', '首次登录带你去修改密码');
+              getApp().data.userName = results.data[0].username;
+              wx.navigateTo({ url: '/pages/changPwd/changPwd' });
             }else{
               util.showModel('系统提示', '你要查看的OA界面正在建设中');
             }

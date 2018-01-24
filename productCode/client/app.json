@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/changPwd/changPwd",
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
     "pages/fourPage/fourPage"
