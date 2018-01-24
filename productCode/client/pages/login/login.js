@@ -84,7 +84,7 @@ Page({
     console.log("用户名：" + this.data.userName + " 密码：" + this.data.userPwd);
     var that = this;
     wx.request({
-      url: `${config.service.loginURL1}`,//'http://localhost:8080/mis-web/platform/xcxLogin', //
+      url: `${config.service.loginURL1}`,//'http://localhost:8080/mis-web/platform/changPwd', //
       data: { username: '' + that.data.userName, password: '' + that.data.userPwd },
       header: {
         "Content-Type": "application/json"
