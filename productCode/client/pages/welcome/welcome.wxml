@@ -2,46 +2,46 @@
   <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item>
       <view class='page'>
-        <image src="../../images/welcome/bg_1.png"></image>
-        <view class='first text white'>
+        <image src="../../images/welcome/bg_1.jpg"></image>
+        <view class='first text'>
           又至岁末
         </view>
-        <view class='second text white'>
+        <view class='second text'>
           你有没有回望这一年
         </view>
-        <view class='third text white'>
+        <view class='third text'>
           每一个数据
         </view>
-        <view class='forth text white'>
+        <view class='forth text'>
           都是时光的标本
         </view>
       </view>
     </swiper-item>
     <swiper-item>
       <view class='page'>
-        <image src="../../images/welcome/bg_2.png"></image>
-        <view class='first big text'>
-          2017年
+        <image src="../../images/welcome/bg_2.jpg"></image>
+        <view class='first text white bigBox'>
+          <text class='big'>2017</text> 年
         </view>
-        <view class='second text'>
+        <view class='second text white'>
           收到来文
-          <text class='blue'>{{receiveFiles}}</text> 个
+          <text class='middle'>{{receiveFiles}}</text> 个
         </view>
-        <view class='third text'>
+        <view class='third text white'>
           已阅公文
-          <text class='blue'>{{readFiles}}</text> 个
+          <text class='middle'>{{readFiles}}</text> 个
         </view>
-        <view class='forth text'>
+        <view class='forth text white'>
           办结来文
-          <text class='blue'>{{dealFiles}}</text> 个
+          <text class='middle'>{{dealFiles}}</text> 个
         </view>
-        <view class='fifth  text'>
+        <view class='fifth text white'>
           办结率为
-          <text class='blue'>{{dealPercent}}</text>
+          <text class='middle'>{{dealPercent}}</text>
         </view>
-        <view class='sixth text'>
+        <view class='sixth text white'>
           超过了
-          <text class='blue'>{{morePercent}}</text> 的厅OA用户
+          <text class='middle'>{{morePercent}}</text> 的厅OA用户
         </view>
       </view>
     </swiper-item>
@@ -50,18 +50,18 @@
         <image src="../../images/welcome/bg_3.png"></image>
         <view class='first text'>
           全年共登录厅OA系统
-          <text class='blue'>{{oaNum}}</text> 次
+          <text class='middle'>{{oaNum}}</text> 次
         </view>
         <view class='second text'>
           在线时长共
-          <text class='blue'>{{oaMinute}}</text> 分钟
+          <text class='middle'>{{oaMinute}}</text> 分钟
         </view>
         <view class='third text'>
           也许连你自己都没察觉
         </view>
         <view class='forth text'>
           你最喜欢在
-          <text class='blue'>{{oaTime}}</text> 时分
+          <text class='middle'>{{oaTime}}</text> 时分
         </view>
         <view class='fifth text'>
           打开厅OA系统进行工作
@@ -73,57 +73,59 @@
     </swiper-item>    
     <swiper-item>
       <view class='page'>
-        <image src='../../images/welcome/bg_5.png'></image>
-        <view class='text first big'>2017年</view>
-        <view class='text second'>
+        <image src='../../images/welcome/bg_5.jpg'></image>
+        <view class='text first white bigBox'>
+          <text class='big'>2017</text>年
+        </view>
+        <view class='text second white'>
           一共出差
-          <text class='blue'>{{businessTripNum}}</text> 次
-        </view>
-        <view class='text third blue'>
-          {{businessTripDay}} 天
-        </view>
-        <view class='text forth'>
+          <text class='middle'>{{businessTripNum}}</text> 次
+        </view>       
+        <view class='text third white'>
           出差次数最多的月份是
-          <text class='blue'>{{businessTripMonth}}</text>
+          <text class='middle'>{{businessTripMonth}}</text>
         </view>
-        <view class='text fifth'>
+        <view class='text forth white'>
           足迹遍布
-          <text class='blue'>{{businessTripCity}}</text>
+          <text class='middle'>{{businessTripCity}}</text>
         </view>
-        <view class='text sixth'> 每一次出差想必都有别样的工作记忆吧！</view>
+        <view class='text fifth white'> 每一次出差想必都有别样的工作记忆吧！</view>
       </view>
     </swiper-item>
     <swiper-item>
       <view class='page'>
-        <image src='../../images/welcome/bg_6.png'></image>
-        <view class='text first big'>2017年</view>
+        <image src='../../images/welcome/bg_6.jpg'></image>
+        <view class='text first bigBox'>
+          <text class='big'>2017</text>年
+        </view>
         <view class='text second'>
           发送短信
-          <text class='blue'>{{sendMsgNum}}</text> 条
+          <text class='middle'>{{sendMsgNum}}</text> 条
         </view>
         <view class='text third'>
           接收短信
-          <text class='blue'>{{receivedMsgNum}}</text> 条
+          <text class='middle'>{{receivedMsgNum}}</text> 条
         </view>
         <view class='text forth'>
           你最常发送短信给
-          <text class='blue'>{{msgToName}}</text>
+          <text class='middle'>{{msgToName}}</text>
         </view>
         <view class='text fifth'>
           最常接到
-          <text class='blue'>{{receivedName}}</text> 给你发来的短信
+          <text class='middle'>{{receivedName}}</text> 给你发来的短信
         </view>
       </view>
     </swiper-item>
     <swiper-item>
       <view class='page'>
-        <image src='../../images/welcome/bg_7.png'></image>
+        <image src='../../images/welcome/bg_7.jpg'></image>
+        <view class='title'>2017年广西科技厅OA系统年度使用报告</view>
         <view class='summary-wrap'>
           <view class='keyWordText'>你的年度关键词</view>
           <view class='subInfo'>OA系统智能助理预测2018</view>
 
           <view class='img-wrap'>
-            <image src='../../images/welcome/bg_7_item.png'></image>
+            <image src='../../images/welcome/keyword-img3.png'></image>
           </view>
 
           <view class='keyWord'>{{keyWord}}</view>
@@ -133,10 +135,11 @@
     </swiper-item>
     <swiper-item>
       <view class='page'>
-        <image src='../../images/welcome/bg_8.png'></image>
+        <image src='../../images/welcome/bg_8.jpg'></image>
         <view class='year-img'>
           <image src='../../images/welcome/2017.png'></image>
         </view>
+        <view class='author'>策划制作：八桂科创</view>
         <view class='qrCode-wrap'>
           <image src="../../images/welcome/qrCode.png"></image>
         </view>
