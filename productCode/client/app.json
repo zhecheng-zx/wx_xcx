@@ -4,8 +4,8 @@
     "pages/changPwd/changPwd",
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
-    "pages/fourPage/fourPage"
-    
+    "pages/fourPage/fourPage",
+    "pages/welcome/welcome"
   ],
   "window":{
     "backgroundColor":"#ffffff",

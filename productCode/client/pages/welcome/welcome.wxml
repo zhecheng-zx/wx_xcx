@@ -1,0 +1,148 @@
+<view class="containers">
+  <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper-item>
+      <view class='page'>
+        <image src="../../images/welcome/bg_1.png"></image>
+        <view class='first text white'>
+          又至岁末
+        </view>
+        <view class='second text white'>
+          你有没有回望这一年
+        </view>
+        <view class='third text white'>
+          每一个数据
+        </view>
+        <view class='forth text white'>
+          都是时光的标本
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='page'>
+        <image src="../../images/welcome/bg_2.png"></image>
+        <view class='first big text'>
+          2017年
+        </view>
+        <view class='second text'>
+          收到来文
+          <text class='blue'>{{receiveFiles}}</text> 个
+        </view>
+        <view class='third text'>
+          已阅公文
+          <text class='blue'>{{readFiles}}</text> 个
+        </view>
+        <view class='forth text'>
+          办结来文
+          <text class='blue'>{{dealFiles}}</text> 个
+        </view>
+        <view class='fifth  text'>
+          办结率为
+          <text class='blue'>{{dealPercent}}</text>
+        </view>
+        <view class='sixth text'>
+          超过了
+          <text class='blue'>{{morePercent}}</text> 的厅OA用户
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='page'>
+        <image src="../../images/welcome/bg_3.png"></image>
+        <view class='first text'>
+          全年共登录厅OA系统
+          <text class='blue'>{{oaNum}}</text> 次
+        </view>
+        <view class='second text'>
+          在线时长共
+          <text class='blue'>{{oaMinute}}</text> 分钟
+        </view>
+        <view class='third text'>
+          也许连你自己都没察觉
+        </view>
+        <view class='forth text'>
+          你最喜欢在
+          <text class='blue'>{{oaTime}}</text> 时分
+        </view>
+        <view class='fifth text'>
+          打开厅OA系统进行工作
+        </view>
+        <view class='chart-wrap'>
+          <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+        </view>
+      </view>
+    </swiper-item>    
+    <swiper-item>
+      <view class='page'>
+        <image src='../../images/welcome/bg_5.png'></image>
+        <view class='text first big'>2017年</view>
+        <view class='text second'>
+          一共出差
+          <text class='blue'>{{businessTripNum}}</text> 次
+        </view>
+        <view class='text third blue'>
+          {{businessTripDay}} 天
+        </view>
+        <view class='text forth'>
+          出差次数最多的月份是
+          <text class='blue'>{{businessTripMonth}}</text>
+        </view>
+        <view class='text fifth'>
+          足迹遍布
+          <text class='blue'>{{businessTripCity}}</text>
+        </view>
+        <view class='text sixth'> 每一次出差想必都有别样的工作记忆吧！</view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='page'>
+        <image src='../../images/welcome/bg_6.png'></image>
+        <view class='text first big'>2017年</view>
+        <view class='text second'>
+          发送短信
+          <text class='blue'>{{sendMsgNum}}</text> 条
+        </view>
+        <view class='text third'>
+          接收短信
+          <text class='blue'>{{receivedMsgNum}}</text> 条
+        </view>
+        <view class='text forth'>
+          你最常发送短信给
+          <text class='blue'>{{msgToName}}</text>
+        </view>
+        <view class='text fifth'>
+          最常接到
+          <text class='blue'>{{receivedName}}</text> 给你发来的短信
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='page'>
+        <image src='../../images/welcome/bg_7.png'></image>
+        <view class='summary-wrap'>
+          <view class='keyWordText'>你的年度关键词</view>
+          <view class='subInfo'>OA系统智能助理预测2018</view>
+
+          <view class='img-wrap'>
+            <image src='../../images/welcome/bg_7_item.png'></image>
+          </view>
+
+          <view class='keyWord'>{{keyWord}}</view>
+          <view class='summary'>{{summary}}</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='page'>
+        <image src='../../images/welcome/bg_8.png'></image>
+        <view class='year-img'>
+          <image src='../../images/welcome/2017.png'></image>
+        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+
+</view>
