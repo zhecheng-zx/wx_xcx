@@ -7,7 +7,7 @@ var host = 'https://f7ihczsu.qcloud.la',
     //host2 = 'http://58.16.181.24:9210/mis-web/platform/';
   host2 = 'https://bigdata.gxst.gov.cn/mis-web/platform/';
 
-var config = {
+var config = { 
 
     // 下面的地址配合云端 Demo 工作
     service: {
