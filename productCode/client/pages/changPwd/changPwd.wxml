@@ -1,0 +1,10 @@
+<view class='login'>
+  <view class='login-form'>
+      <view class="section">
+        <input type="password" name="input" placeholder="请输入新密码" bindinput="passWdInput"/>
+      </view>
+      <view class="btn-area">
+        <button  bindtap="setLogin">修改</button>
+      </view>
+    </view> 
+</view>
