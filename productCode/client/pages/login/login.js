@@ -82,6 +82,12 @@ Page({
    */
   setLogin: function () {
     console.log("用户名：" + this.data.userName + " 密码：" + this.data.userPwd);
+
+    wx.redirectTo({
+      url: '../../pages/welcome/welcome'
+    });
+    return
+
     var that = this;
     wx.request({
       url: `${config.service.loginURL1}`,//'http://localhost:8080/mis-web/platform/changPwd', //

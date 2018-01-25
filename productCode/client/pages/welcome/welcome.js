@@ -32,56 +32,11 @@ Page({
     summary: '从今天起做一个幸福的人，努力工作、读书、旅行、 运动、保持好的心情'
   },
 
-  createSimulationData: function () {
-    var categories = ['00:00', '04:00', '08:00', '12:00', '16:00', '22:00', '24:00'];
-    var data = [];
-    for (var i = 0; i < categories.length; i++) {
-      data.push(parseInt(Math.random() * 100));
-    }
-
-    return {
-      categories: categories,
-      data: data
-    }
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth * 0.8;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-    
-    var simulationData = this.createSimulationData();
-    lineChart = new wxCharts({
-      canvasId: 'lineCanvas',
-      type: 'line',
-      title: 'aaa',
-      categories: simulationData.categories,
-      animation: true,      
-      series: [{        
-        data: simulationData.data,
-        color: '#032c8a',
-        symbolSize: 15,     
-        smooth: true  
-      }],
-      yAxis: {
-        show: false
-      },
-      legend: false,
-      height: 150,
-      width: windowWidth,
-      dataLabel: false,
-      dataPointShape: true,
-      extra: {
-        lineStyle: 'curve'
-      }
-    });
+  
   },
 
   /**

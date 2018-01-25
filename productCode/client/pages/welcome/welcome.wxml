@@ -67,7 +67,7 @@
           打开厅OA系统进行工作
         </view>
         <view class='chart-wrap'>
-          <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+          <image src='../../images/welcome/line.png'></image>
         </view>
       </view>
     </swiper-item>    

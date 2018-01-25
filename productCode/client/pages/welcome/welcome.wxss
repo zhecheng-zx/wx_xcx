@@ -69,14 +69,10 @@ page {
 
 .chart-wrap {
   position: absolute;
-  bottom: 150rpx;
+  bottom: 120rpx;
   left: 10%;
   width: 80%;
-}
-
-.chart-wrap .canvas {
-  width: 100%;
-  height: 300rpx;
+  height: 460rpx;
 }
 
 .page .summary-wrap {
