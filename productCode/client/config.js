@@ -15,6 +15,10 @@ var config = {
         host2,
         loginURL1: `${host2}/xcxLogin`,
         changPwd: `${host2}/changPwd`,
+        firstPage: `${host2}/xcxOaFirstPage`,
+        secondPage: `${host2}/xcxOaSecondPage`,
+        thirdPage: `${host2}/xcxOaThirdPage`,
+        fourthPage: `${host2}/xcxOaFourthPage`,
         // 登录地址，用于建立会话
         loginUrl: `${host}/weapp/login`,
 
@@ -24,7 +28,7 @@ var config = {
         // 测试的信道服务地址
         tunnelUrl: `${host}/weapp/tunnel`,
 
-        // 上传图片接口
+        // 上传图片接口 
         uploadUrl: `${host}/weapp/upload`,
         
         //科技项目按状态统计接口

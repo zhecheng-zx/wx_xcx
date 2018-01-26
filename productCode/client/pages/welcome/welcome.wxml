@@ -17,6 +17,7 @@
         </view>
       </view>
     </swiper-item>
+    <view wx:if="{{condition1==true}}">
     <swiper-item>
       <view class='page'>
         <image src="../../images/welcome/bg_2.jpg"></image>
@@ -32,11 +33,11 @@
           <text class='middle'>{{readFiles}}</text> 个
         </view>
         <view class='forth text white'>
-          办结来文
+          办文
           <text class='middle'>{{dealFiles}}</text> 个
         </view>
         <view class='fifth text white'>
-          办结率为
+          按期办结率为
           <text class='middle'>{{dealPercent}}</text>
         </view>
         <view class='sixth text white'>
@@ -45,6 +46,8 @@
         </view>
       </view>
     </swiper-item>
+    </view>
+    <view wx:if="{{condition2==true}}">
     <swiper-item>
       <view class='page'>
         <image src="../../images/welcome/bg_3.png"></image>
@@ -59,6 +62,7 @@
         <view class='third text'>
           也许连你自己都没察觉
         </view>
+        <!--
         <view class='forth text'>
           你最喜欢在
           <text class='middle'>{{oaTime}}</text> 时分
@@ -66,11 +70,14 @@
         <view class='fifth text'>
           打开厅OA系统进行工作
         </view>
+        -->
         <view class='chart-wrap'>
           <image src='../../images/welcome/line.png'></image>
         </view>
       </view>
-    </swiper-item>    
+    </swiper-item> 
+    </view>   
+    <view wx:if="{{condition3==true}}">
     <swiper-item>
       <view class='page'>
         <image src='../../images/welcome/bg_5.jpg'></image>
@@ -82,7 +89,7 @@
           <text class='middle'>{{businessTripNum}}</text> 次
         </view>       
         <view class='text third white'>
-          出差次数最多的月份是
+          出差方式
           <text class='middle'>{{businessTripMonth}}</text>
         </view>
         <view class='text forth white'>
@@ -92,6 +99,8 @@
         <view class='text fifth white'> 每一次出差想必都有别样的工作记忆吧！</view>
       </view>
     </swiper-item>
+    </view>
+    <view wx:if="{{condition4==true}}">
     <swiper-item>
       <view class='page'>
         <image src='../../images/welcome/bg_6.jpg'></image>
@@ -116,6 +125,7 @@
         </view>
       </view>
     </swiper-item>
+    </view>
     <swiper-item>
       <view class='page'>
         <image src='../../images/welcome/bg_7.jpg'></image>

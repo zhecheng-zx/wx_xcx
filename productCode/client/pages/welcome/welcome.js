@@ -1,6 +1,7 @@
 // pages/welcome/welcome.js
 var wxCharts = require('../../utils/wxcharts-min.js');
-
+var util = require('../../utils/util.js');
+var config = require('../../config.js');
 var lineChart = null;
 Page({
 
@@ -8,6 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    condition1:true,
+    condition2:true,
+    condition3: true,
+    condition4: true,
     vertical: false,
     autoplay: false,
     interval: 3000,
@@ -36,14 +41,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    that.panelData();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -86,5 +92,97 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**
+   * 请求数据
+   */
+  panelData: function () {
+    //util.showBusy('请求中...');
+    var that = this;
+    wx.request({
+      url: `${config.service.firstPage}`,
+      data: { username:"唐咸来"},
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        console.log(results.data[0].pmb);
+        if (results.data[0].sdlw==null)
+        {
+          that.setData({
+            condition1: false
+          });
+        }else{
+          that.setData({
+            receiveFiles: results.data[0].sdlw,
+            readFiles: results.data[0].yylw,
+            dealFiles: results.data[0].bjlw,
+            dealPercent: results.data[0].aa,
+            morePercent: results.data[0].pmb
+          });
+        }
+
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
+    wx.request({
+      url: `${config.service.secondPage}`,
+      data: { username: "唐咸来" },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        if (results.data[0].dlcs==null){
+          that.setData({
+            condition2:false
+          });
+        }else{
+          that.setData({
+            oaNum: results.data[0].dlcs,
+            oaMinute: results.data[0].zxsc
+          });
+        }
+
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
+    wx.request({
+      url: `${config.service.thirdPage}`,
+      data: { username: "唐咸来" },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        if (results.data[0].cccs == null) {
+          that.setData({
+            condition3: false
+          });
+        } else {
+          that.setData({
+            businessTripNum: results.data[0].cccs,
+            businessTripMonth: results.data[0].ccfs,
+            businessTripCity: results.data[0].ccdd
+          });
+        }
+
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
+    console.log(that.data.businessTripCity);
   }
 })
