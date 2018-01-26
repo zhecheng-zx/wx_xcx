@@ -19,6 +19,7 @@ var config = {
         secondPage: `${host2}/xcxOaSecondPage`,
         thirdPage: `${host2}/xcxOaThirdPage`,
         fourthPage: `${host2}/xcxOaFourthPage`,
+        finalPage: `${host2}/xcxOaFinalPage`,
         // 登录地址，用于建立会话
         loginUrl: `${host}/weapp/login`,
 

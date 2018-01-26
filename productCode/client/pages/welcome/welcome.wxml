@@ -115,14 +115,6 @@
           接收短信
           <text class='middle'>{{receivedMsgNum}}</text> 条
         </view>
-        <view class='text forth'>
-          你最常发送短信给
-          <text class='middle'>{{msgToName}}</text>
-        </view>
-        <view class='text fifth'>
-          最常接到
-          <text class='middle'>{{receivedName}}</text> 给你发来的短信
-        </view>
       </view>
     </swiper-item>
     </view>
@@ -135,7 +127,7 @@
           <view class='subInfo'>OA系统智能助理预测2018</view>
 
           <view class='img-wrap'>
-            <image src='../../images/welcome/keyword-img3.png'></image>
+            <image src='{{imageUrl}}'></image>
           </view>
 
           <view class='keyWord'>{{keyWord}}</view>

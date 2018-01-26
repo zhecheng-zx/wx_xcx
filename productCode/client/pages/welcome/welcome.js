@@ -183,6 +183,65 @@ Page({
         console.log('request fail', error);
       }
     });
+    wx.request({
+      url: `${config.service.fourthPage}`,
+      data: { username: "唐咸来" },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        if (results.data[0].fsdx == null) {
+          that.setData({
+            condition4: false
+          });
+        } else {
+          that.setData({
+            sendMsgNum: results.data[0].fsdx,
+            receivedMsgNum: results.data[0].jsdx
+          });
+        }
+
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
+    wx.request({
+      url: `${config.service.finalPage}`,
+      data: { username: "唐咸来" },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        var results = result.data;
+        if (results.data[0].pj == null) {
+          that.setData({
+            imageUrl: '../../images/welcome/keyword-img3.png'
+          });
+        } else if(results.data[0].pj == "工作狂") {
+          that.setData({
+            imageUrl: '../../images/welcome/keyword-img2.png'
+          });
+        } else if (results.data[0].pj == "兢兢业业") {
+          that.setData({
+            imageUrl: '../../images/welcome/keyword-img1.png'
+          });
+        } else {
+          that.setData({
+            imageUrl: '../../images/welcome/keyword-img3.png'
+          });
+        }
+
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
     console.log(that.data.businessTripCity);
   }
 })
