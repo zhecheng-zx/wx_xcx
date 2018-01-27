@@ -83,10 +83,11 @@ Page({
   setLogin: function () {
     console.log("用户名：" + this.data.userName + " 密码：" + this.data.userPwd);
 
-    wx.redirectTo({
+    /*wx.redirectTo({
       url: '../../pages/welcome/welcome'
     });
     return
+    */
 
     var that = this;
     wx.request({
@@ -109,7 +110,10 @@ Page({
               getApp().data.userName = results.data[0].username;
               wx.navigateTo({ url: '/pages/changPwd/changPwd' });
             }else{
-              util.showModel('系统提示', '你要查看的OA界面正在建设中');
+              getApp().data.userName = results.data[0].realname;
+              wx.redirectTo({
+                url: '../../pages/welcome/welcome'
+              });
             }
             
           }

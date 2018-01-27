@@ -101,14 +101,14 @@ Page({
     var that = this;
     wx.request({
       url: `${config.service.firstPage}`,
-      data: { username:"唐咸来"},
+      data: { username: getApp().data.userName},
       header: {
         "Content-Type": "application/json"
       },
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        console.log(results.data[0].pmb);
+        //console.log(results.data[0].pmb);
         if (results.data[0].sdlw==null)
         {
           that.setData({
@@ -132,7 +132,7 @@ Page({
     });
     wx.request({
       url: `${config.service.secondPage}`,
-      data: { username: "唐咸来" },
+      data: { username: getApp().data.userName },
       header: {
         "Content-Type": "application/json"
       },
@@ -158,22 +158,22 @@ Page({
     });
     wx.request({
       url: `${config.service.thirdPage}`,
-      data: { username: "唐咸来" },
+      data: { username: getApp().data.userName },
       header: {
         "Content-Type": "application/json"
       },
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        if (results.data[0].cccs == null) {
+        if (results.data[0].cccs == 0) {
           that.setData({
             condition3: false
           });
         } else {
           that.setData({
             businessTripNum: results.data[0].cccs,
-            businessTripMonth: results.data[0].ccfs,
-            businessTripCity: results.data[0].ccdd
+            businessTripMonth: results.data[0].ccfs == null ? '无' : results.data[0].ccfs,
+            businessTripCity: results.data[0].ccdd == null ? '无' : results.data[0].ccdd
           });
         }
 
@@ -185,7 +185,7 @@ Page({
     });
     wx.request({
       url: `${config.service.fourthPage}`,
-      data: { username: "唐咸来" },
+      data: { username: getApp().data.userName },
       header: {
         "Content-Type": "application/json"
       },
@@ -211,7 +211,7 @@ Page({
     });
     wx.request({
       url: `${config.service.finalPage}`,
-      data: { username: "唐咸来" },
+      data: { username: getApp().data.userName },
       header: {
         "Content-Type": "application/json"
       },
@@ -224,14 +224,17 @@ Page({
           });
         } else if(results.data[0].pj == "工作狂") {
           that.setData({
+            keyWord:'工作狂',
             imageUrl: '../../images/welcome/keyword-img2.png'
           });
         } else if (results.data[0].pj == "兢兢业业") {
           that.setData({
+            keyWord: '兢兢业业',
             imageUrl: '../../images/welcome/keyword-img1.png'
           });
         } else {
           that.setData({
+            keyWord: '勤勤勉勉',
             imageUrl: '../../images/welcome/keyword-img3.png'
           });
         }
