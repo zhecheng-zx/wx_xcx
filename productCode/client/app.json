@@ -5,7 +5,8 @@
     "pages/secondPage/secondPage",
     "pages/threePage/threePage",
     "pages/fourPage/fourPage",
-    "pages/welcome/welcome"
+    "pages/welcome/welcome",
+    "pages/welcomeTz/welcomeTz"
   ],
   "window":{
     "backgroundColor":"#ffffff",
@@ -35,6 +36,12 @@
       {
         "text": "科技工作者",
         "pagePath": "pages/fourPage/fourPage",
+        "iconPath": "images/tabbar4.png",
+        "selectedIconPath": "images/tabbar4-actived.png"
+      },
+      {
+        "text": "OA",
+        "pagePath": "pages/welcomeTz/welcomeTz",
         "iconPath": "images/tabbar4.png",
         "selectedIconPath": "images/tabbar4-actived.png"
       }

@@ -218,7 +218,7 @@ Page({
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        if (results.data[0].pj == null) {
+        if (result.status !== 1 || results.data[0].pj == null) {
           that.setData({
             imageUrl: '../../images/welcome/keyword-img3.png'
           });

@@ -103,6 +103,7 @@ Page({
         if (results.status != 1 && results.data.length>=1) {
           getApp().data.loginFlag = "1";
           if (results.data[0].role=="1"){
+            getApp().data.userName = results.data[0].realname;
             wx.switchTab({ url: '/pages/secondPage/secondPage' });
           }else{
             if (results.data[0].flag == "0") {
@@ -111,9 +112,7 @@ Page({
               wx.navigateTo({ url: '/pages/changPwd/changPwd' });
             }else{
               getApp().data.userName = results.data[0].realname;
-              wx.redirectTo({
-                url: '../../pages/welcome/welcome'
-              });
+              wx.redirectTo({ url: '/pages/welcome/welcome' });
             }
             
           }
