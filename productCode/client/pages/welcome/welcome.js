@@ -9,7 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    animation:"",
     condition1: true,
     condition2: true,
     condition3: true,
@@ -57,23 +56,7 @@ Page({
   },
 
   onShow: function () {
-    console.log('index---------onShow()')
-    this.animation = wx.createAnimation({
-      duration: 1400,
-      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
-      delay: 0,
-      transformOrigin: '50% 50% 0',
-      success: function (res) {
-        console.log("res")
-      }
-    })
-  },
-  rotateAni: function (n) {
-    console.log("rotate==" + n)
-    this.animation.rotate(180 * (n)).step()
-    this.setData({
-      animation: this.animation.export()
-    })
+
   },
 
   /**
