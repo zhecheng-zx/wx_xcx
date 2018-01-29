@@ -40,10 +40,10 @@
         "selectedIconPath": "images/tabbar4-actived.png"
       },
       {
-        "text": "OA",
+        "text": "OA使用报告",
         "pagePath": "pages/welcomeTz/welcomeTz",
-        "iconPath": "images/tabbar4.png",
-        "selectedIconPath": "images/tabbar4-actived.png"
+        "iconPath": "images/tabbar5.png",
+        "selectedIconPath": "images/tabbar5-actived.png"
       }
     ]
   },

@@ -55,7 +55,7 @@ page {
 
 .bigBox,
 .page.lessText .first {
-  top: 100rpx !important;
+  top: 130rpx !important;
 }
 
 .second {
@@ -63,7 +63,7 @@ page {
 }
 
 .page.lessText .second{
-  top: 200rpx;
+  top: 190rpx;
 }
 
 .third {
@@ -71,7 +71,7 @@ page {
 }
 
 .page.lessText .third{
-  top: 300rpx;
+  top: 250rpx;
 }
 
 .forth {
@@ -79,7 +79,7 @@ page {
 }
 
 .page.lessText .forth{
-  top: 400rpx;
+  top: 310rpx;
 }
 
 .fifth {

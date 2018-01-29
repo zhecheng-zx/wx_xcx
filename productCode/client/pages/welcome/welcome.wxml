@@ -1,7 +1,7 @@
 <view class="containers">
   <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item>
-      <view class='page'>
+      <view class='page lessText'>
         <image src="../../images/welcome/bg_1.jpg"></image>
         <view class='first text'>
           又至岁末
@@ -19,7 +19,7 @@
     </swiper-item>
     <view wx:if="{{condition1==true}}">
     <swiper-item>
-      <view class='page'>
+      <view class='page lessText'>
         <image src="../../images/welcome/bg_2.jpg"></image>
         <view class='first text white bigBox'>
           <text class='big'>2017</text> 年
@@ -79,7 +79,7 @@
     </view>   
     <view wx:if="{{condition3==true}}">
     <swiper-item>
-      <view class='page'>
+      <view class='page lessText'>
         <image src='../../images/welcome/bg_5.jpg'></image>
         <view class='text first white bigBox'>
           <text class='big'>2017</text>年

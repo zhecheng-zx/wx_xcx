@@ -16,7 +16,7 @@ Page({
     vertical: false,
     autoplay: false,
     interval: 3000,
-    duration: 1200,
+    duration: 500,
     receiveFiles: 120,
     readFiles: 80,
     dealFiles: 66,
@@ -43,6 +43,9 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.panelData();
+    wx.setNavigationBarTitle({
+      title: "OA年度使用报告"//页面标题为路由参数
+    })
   },
 
   /**

@@ -29,38 +29,57 @@ page {
   left: 100rpx;
 }
 
+.page.lessText .text{
+  font-size: 36rpx;
+}
+
 .page .text.white {
   color: #fff;
 }
 
 .containers .page .big {
   font-size: 50rpx;
-  height: 80rpx;
-  top: 90rpx;
 }
 
 .containers .page .middle {
   font-size: 40rpx !important;
 }
 
+.containers .page.lessText .middle{
+  font-size: 44rpx !important;
+}
+
 .first {
   top: 120rpx;
 }
 
-.bigBox {
-  top: 100rpx !important;
+.bigBox,
+.page.lessText .first {
+  top: 130rpx !important;
 }
 
 .second {
   top: 180rpx;
 }
 
+.page.lessText .second{
+  top: 190rpx;
+}
+
 .third {
   top: 240rpx;
 }
 
+.page.lessText .third{
+  top: 250rpx;
+}
+
 .forth {
   top: 300rpx;
+}
+
+.page.lessText .forth{
+  top: 310rpx;
 }
 
 .fifth {
@@ -166,4 +185,8 @@ page {
   width:100%;
   top:50rpx;
   color:#fff;
+}
+
+.subText{
+  margin-top: 18rpx;
 }
