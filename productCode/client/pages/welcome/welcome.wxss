@@ -46,7 +46,7 @@ page {
 }
 
 .containers .page.lessText .middle{
-  font-size: 44rpx !important;
+  font-size: 40rpx !important;
 }
 
 .first {
@@ -76,6 +76,7 @@ page {
 
 .forth {
   top: 300rpx;
+  right: 10%;
 }
 
 .page.lessText .forth{
@@ -83,11 +84,11 @@ page {
 }
 
 .fifth {
-  top: 360rpx;
+  top: 370rpx;
 }
 
 .sixth {
-  top: 420rpx;
+  top: 430rpx;
 }
 
 .blue {

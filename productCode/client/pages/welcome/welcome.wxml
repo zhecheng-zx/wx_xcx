@@ -1,18 +1,21 @@
 <view class="containers">
-  <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
     <swiper-item>
-      <view class='page lessText'>
+      <view class='page lessText'animation="{{animation}}">
         <image src="../../images/welcome/bg_1.jpg"></image>
         <view class='first text'>
-          又至岁末
+          {{userName}}，您好！
         </view>
         <view class='second text'>
-          你有没有回望这一年
+          又至岁末
         </view>
         <view class='third text'>
-          每一个数据
+          你有没有回望这一年
         </view>
         <view class='forth text'>
+          每一个数据
+        </view>
+        <view class='fifth text'>
           都是时光的标本
         </view>
       </view>
@@ -52,15 +55,18 @@
       <view class='page lessText'>
         <image src="../../images/welcome/bg_3.png"></image>
         <view class='first text'>
-          全年共登录厅OA系统
-          <text class='middle'>{{oaNum}}</text> 次
+          在工作的日子里
         </view>
         <view class='second text'>
-          在线时长共
-          <text class='middle'>{{oaMinute}}</text> 分钟
+          不知不觉我们又走过了一年
         </view>
         <view class='third text'>
-          也许连你自己都没察觉
+          今年您共登录厅OA系统
+          <text class='middle'>{{oaNum}}</text> 次
+        </view>
+        <view class='forth text'>
+          在线时长共
+          <text class='middle'>{{oaMinute}}</text> 分钟
         </view>
         <!--
         <view class='forth text'>
@@ -104,14 +110,20 @@
     <swiper-item>
       <view class='page lessText'>
         <image src='../../images/welcome/bg_6.jpg'></image>
-        <view class='text first bigBox'>
-          <text class='big'>2017</text>年
+        <view class='text first'>
+          每一条短信的提醒
         </view>
         <view class='text second'>
+          都是一次亲切的问候
+        </view>
+        <view class='text third'>
+        2017年
+        </view>
+        <view class='text forth'>
           发送短信
           <text class='middle'>{{sendMsgNum}}</text> 条
         </view>
-        <view class='text third'>
+        <view class='text fifth'>
           接收短信
           <text class='middle'>{{receivedMsgNum}}</text> 条
         </view>

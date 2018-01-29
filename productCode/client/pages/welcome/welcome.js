@@ -9,8 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    condition1:true,
-    condition2:true,
+    animation:"",
+    condition1: true,
+    condition2: true,
     condition3: true,
     condition4: true,
     vertical: false,
@@ -55,46 +56,59 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    console.log('index---------onShow()')
+    this.animation = wx.createAnimation({
+      duration: 1400,
+      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+      delay: 0,
+      transformOrigin: '50% 50% 0',
+      success: function (res) {
+        console.log("res")
+      }
+    })
+  },
+  rotateAni: function (n) {
+    console.log("rotate==" + n)
+    this.animation.rotate(180 * (n)).step()
+    this.setData({
+      animation: this.animation.export()
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   /**
    * 请求数据
@@ -102,9 +116,12 @@ Page({
   panelData: function () {
     //util.showBusy('请求中...');
     var that = this;
+    that.setData({
+      userName: getApp().data.userName
+    });
     wx.request({
       url: `${config.service.firstPage}`,
-      data: { username: getApp().data.userName},
+      data: { username: getApp().data.userName },
       header: {
         "Content-Type": "application/json"
       },
@@ -112,12 +129,11 @@ Page({
         util.showSuccess('请求成功完成')
         var results = result.data;
         //console.log(results.data[0].pmb);
-        if (results.data[0].sdlw==null)
-        {
+        if (results.data[0].sdlw == null) {
           that.setData({
             condition1: false
           });
-        }else{
+        } else {
           that.setData({
             receiveFiles: results.data[0].sdlw,
             readFiles: results.data[0].yylw,
@@ -142,11 +158,11 @@ Page({
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        if (results.data[0].dlcs==null){
+        if (results.data[0].dlcs == null) {
           that.setData({
-            condition2:false
+            condition2: false
           });
-        }else{
+        } else {
           that.setData({
             oaNum: results.data[0].dlcs,
             oaMinute: results.data[0].zxsc
@@ -221,13 +237,14 @@ Page({
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        if (result.status !== 1 || results.data[0].pj == null) {
+        if (result.status == 1 || !results.hasOwnProperty("data")) {
           that.setData({
+            keyWord: '勤勤勉勉',
             imageUrl: '../../images/welcome/keyword-img3.png'
           });
-        } else if(results.data[0].pj == "工作狂") {
+        } else if (results.data[0].pj == "工作狂") {
           that.setData({
-            keyWord:'工作狂',
+            keyWord: '工作狂',
             imageUrl: '../../images/welcome/keyword-img2.png'
           });
         } else if (results.data[0].pj == "兢兢业业") {

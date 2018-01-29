@@ -102,6 +102,9 @@ Page({
   panelData: function () {
     //util.showBusy('请求中...');
     var that = this;
+    that.setData({
+      userName: getApp().data.userName
+    });
     wx.request({
       url: `${config.service.firstPage}`,
       data: { username: getApp().data.userName },
@@ -220,8 +223,9 @@ Page({
       success(result) {
         util.showSuccess('请求成功完成')
         var results = result.data;
-        if (result.status !== 1 || results.data[0].pj == null) {
+        if (result.status == 1 || !results.hasOwnProperty("data")) {
           that.setData({
+            keyWord: '勤勤勉勉',
             imageUrl: '../../images/welcome/keyword-img3.png'
           });
         } else if (results.data[0].pj == "工作狂") {
