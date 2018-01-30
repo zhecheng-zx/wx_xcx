@@ -239,19 +239,11 @@ page {
   left: 20rpx;
   top: 50%;
   margin-top: -20rpx;
-  width: 40rpx;
+  width: 30rpx;
   height: 40rpx;
-}
-
-.containers .left-arrow icon{
-  transform: rotate(90deg);
 }
 
 .containers .arrow.right-arrow{
   left: auto;
   right: 20rpx;
-}
-
-.containers .right-arrow icon{
-  transform: rotate(-90deg)
 }

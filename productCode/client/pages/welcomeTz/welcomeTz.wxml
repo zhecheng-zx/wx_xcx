@@ -172,9 +172,9 @@
   </swiper>
 
   <view class='arrow left-arrow' bindtap="prevSwiper">
-    <icon type="download" size="20" color="rgb(255,255,255)" />
+    <image src='../../images/left_arrow.png'></image>
   </view>
   <view class='arrow right-arrow' bindtap="nextSwiper">
-    <icon type="download" size="20" color="rgb(255,255,255)" />
+    <image src='../../images/right_arrow.png'></image>
   </view>
 </view>
