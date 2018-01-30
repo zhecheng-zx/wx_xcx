@@ -34,7 +34,57 @@ Page({
     msgToName: '张三',
     receivedName: '李四',
     keyWord: '兢兢业业',
-    summary: '从今天起做一个幸福的人，努力工作、读书、旅行、 运动、保持好的心情'
+    summary: '从今天起做一个幸福的人，努力工作、读书、旅行、 运动、保持好的心情',
+    opacity: 0,
+    current: 0,
+    swiperItemNum: 7
+  },
+
+  swiperChange: function (e) {
+    this.setData({
+      opacity: 0
+    });
+
+    this.fadeInAnimate();
+    console.log('change')
+  },
+
+  fadeInAnimate: function (e) {
+    var that = this;
+    var interval = setInterval(function () {
+      var opa = that.data.opacity;
+      if (opa == 1) {
+        clearInterval(interval);
+      }
+
+      that.setData({
+        opacity: opa + 0.2
+      })
+    }, 300);
+  },
+
+
+  prevSwiper: function (e) {
+    if (this.data.current == 0) {
+      return;
+    }
+
+    var cur = this.data.current;
+    this.setData({
+      current: cur - 1
+    });
+  },
+
+  nextSwiper: function (e) {
+    var cur = this.data.current,
+      itemNum = this.data.swiperItemNum;
+    if (cur+1 == itemNum) {
+      return;
+    }else{
+      this.setData({
+        current: cur + 1
+      });
+    }
   },
 
   /**
@@ -59,14 +109,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.fadeInAnimate();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      opacity: 0
+    })
   },
 
   /**
@@ -116,8 +168,10 @@ Page({
         var results = result.data;
         //console.log(results.data[0].pmb);
         if (results.data[0].sdlw == null) {
+          var num = that.data.swiperItemNum;
           that.setData({
-            condition1: false
+            condition1: false,
+            swiperItemNum: num - 1
           });
         } else {
           that.setData({
@@ -145,8 +199,10 @@ Page({
         util.showSuccess('请求成功完成')
         var results = result.data;
         if (results.data[0].dlcs == null) {
+          var num = that.data.swiperItemNum;
           that.setData({
-            condition2: false
+            condition2: false,
+            swiperItemNum: num - 1
           });
         } else {
           that.setData({
@@ -171,8 +227,10 @@ Page({
         util.showSuccess('请求成功完成')
         var results = result.data;
         if (results.data[0].cccs == 0) {
+          var num = that.data.swiperItemNum;
           that.setData({
-            condition3: false
+            condition3: false,
+            swiperItemNum: num - 1
           });
         } else {
           that.setData({
@@ -198,8 +256,10 @@ Page({
         util.showSuccess('请求成功完成')
         var results = result.data;
         if (results.data[0].fsdx == null) {
+          var num = that.data.swiperItemNum;
           that.setData({
-            condition4: false
+            condition4: false,
+            swiperItemNum: num - 1
           });
         } else {
           that.setData({
