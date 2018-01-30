@@ -163,7 +163,7 @@
         <view class='year-img'>
           <image src='../../images/welcome/2017.png'></image>
         </view>
-        <view class='author'>策划制作：八桂科创</view>
+        <view class='author'>策划制作：网络中心大数据、八桂科创团队</view>
         <view class='qrCode-wrap'>
           <image src="../../images/welcome/qrCode.png"></image>
         </view>

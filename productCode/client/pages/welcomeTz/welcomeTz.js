@@ -92,10 +92,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.panelData();
+    
     wx.setNavigationBarTitle({
       title: "OA年度使用报告"//页面标题为路由参数
     })
+    that.panelData();
   },
 
   /**

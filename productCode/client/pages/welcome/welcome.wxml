@@ -1,72 +1,78 @@
 <view class="containers">
-  <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+  <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" bindchange='swiperChange' current='{{current}}'>
     <swiper-item>
       <view class='page lessText'>
         <image src="../../images/welcome/bg_1.jpg"></image>
-        <view class='first text'>
-          {{userName}}，您好！
-        </view>
-        <view class='second text'>
-          又至岁末
-        </view>
-        <view class='third text'>
-          你有没有回望这一年
-        </view>
-        <view class='forth text'>
-          每一个数据
-        </view>
-        <view class='fifth text'>
-          都是时光的标本
+        <view style='opacity: {{opacity}}'>
+          <view class='first text'>
+            {{userName}}，您好！
+          </view>
+          <view class='second text'>
+            又至岁末
+          </view>
+          <view class='third text'>
+            你有没有回望这一年
+          </view>
+          <view class='forth text'>
+            每一个数据
+          </view>
+          <view class='fifth text'>
+            都是时光的标本
+          </view>
         </view>
       </view>
     </swiper-item>
-    <view wx:if="{{condition1==true}}">
-    <swiper-item>
+    <!-- <view wx:if="{{condition1==true}}"> -->
+    <swiper-item wx:if="{{condition1==true}}">
       <view class='page lessText'>
         <image src="../../images/welcome/bg_2.jpg"></image>
-        <view class='first text white bigBox'>
-          <text class='big'>2017</text> 年
-        </view>
-        <view class='second text white'>
-          收到来文
-          <text class='middle'>{{receiveFiles}}</text> 个
-        </view>
-        <view class='third text white'>
-          已阅公文
-          <text class='middle'>{{readFiles}}</text> 个
-        </view>
-        <view class='forth text white'>
-          办文
-          <text class='middle'>{{dealFiles}}</text> 个
-        </view>
-        <view class='fifth text white'>
-          按期办结率为
-          <text class='middle'>{{dealPercent}}</text>
-        </view>
-        <view class='sixth text white'>
-          超过了
-          <text class='middle'>{{morePercent}}</text> 的厅OA用户
+        <view style='opacity: {{opacity}}'>
+          <view class='first text white bigBox'>
+            <text class='big'>2017</text> 年
+          </view>
+          <view class='second text white'>
+            收到来文
+            <text class='middle'>{{receiveFiles}}</text> 个
+          </view>
+          <view class='third text white'>
+            已阅公文
+            <text class='middle'>{{readFiles}}</text> 个
+          </view>
+          <view class='forth text white'>
+            办文
+            <text class='middle'>{{dealFiles}}</text> 个
+          </view>
+          <view class='fifth text white'>
+            按期办结率为
+            <text class='middle'>{{dealPercent}}</text>
+          </view>
+          <view class='sixth text white'>
+            超过了
+            <text class='middle'>{{morePercent}}</text> 的厅OA用户
+          </view>
         </view>
       </view>
     </swiper-item>
-    </view>
-    <view wx:if="{{condition2==true}}">
-    <swiper-item>
+    <!-- </view> -->
+    <!-- <view wx:if="{{condition2==true}}"> -->
+    <swiper-item wx:if="{{condition2==true}}">
       <view class='page lessText'>
         <image src="../../images/welcome/bg_3.png"></image>
-        <view class='first text'>
-          在工作的日子里
-        </view>
-        <view class='second text'>
-          不知不觉我们又走过了一年
-        </view>
-        <view class='third text'>
-          今年您共登录厅OA系统
-          <text class='middle'>{{oaNum}}</text> 次
-        </view>
-        <view class='forth text'>
-          在线时长共
-          <text class='middle'>{{oaMinute}}</text> 分钟
+        <view style='opacity: {{opacity}}'>
+          <view class='first text'>
+            在工作的日子里
+          </view>
+          <view class='second text'>
+            不知不觉我们又走过了一年
+          </view>
+          <view class='third text'>
+            今年您共登录厅OA系统
+            <text class='middle'>{{oaNum}}</text> 次
+          </view>
+          <view class='forth text'>
+            在线时长共
+            <text class='middle'>{{oaMinute}}</text> 分钟
+          </view>
         </view>
         <!--
         <view class='forth text'>
@@ -81,19 +87,20 @@
           <image src='../../images/welcome/line.png'></image>
         </view>
       </view>
-    </swiper-item> 
-    </view>   
-    <view wx:if="{{condition3==true}}">
-    <swiper-item>
+    </swiper-item>
+    <!-- </view>    -->
+    <!-- <view wx:if="{{condition3==true}}"> -->
+    <swiper-item wx:if="{{condition3==true}}">
       <view class='page lessText'>
         <image src='../../images/welcome/bg_5.jpg'></image>
+         <view style='opacity: {{opacity}}'>
         <view class='text first white bigBox'>
           <text class='big'>2017</text>年
         </view>
         <view class='text second white'>
           一共出差
           <text class='middle'>{{businessTripNum}}</text> 次
-        </view>       
+        </view>
         <view class='text third white'>
           出差方式
           <text class='middle'>{{businessTripMonth}}</text>
@@ -101,15 +108,17 @@
         <view class='text forth white'>
           足迹遍布
           <text class='middle'>{{businessTripCity}}</text>
-          <view class='subText'> 每一次出差想必都有别样的工作记忆吧！</view> 
-        </view>         
+          <view class='subText'> 每一次出差想必都有别样的工作记忆吧！</view>
+        </view>
+        </view>
       </view>
     </swiper-item>
-    </view>
-    <view wx:if="{{condition4==true}}">
-    <swiper-item>
+    <!-- </view> -->
+    <!-- <view wx:if="{{condition4==true}}"> -->
+    <swiper-item wx:if="{{condition4==true}}">
       <view class='page lessText'>
         <image src='../../images/welcome/bg_6.jpg'></image>
+         <view style='opacity: {{opacity}}'>
         <view class='text first'>
           每一条短信的提醒
         </view>
@@ -117,7 +126,7 @@
           都是一次亲切的问候
         </view>
         <view class='text third'>
-        2017年
+          2017年
         </view>
         <view class='text forth'>
           发送短信
@@ -127,9 +136,10 @@
           接收短信
           <text class='middle'>{{receivedMsgNum}}</text> 条
         </view>
+        </view>
       </view>
     </swiper-item>
-    </view>
+    <!-- </view> -->
     <swiper-item>
       <view class='page'>
         <image src='../../images/welcome/bg_7.jpg'></image>
@@ -153,7 +163,7 @@
         <view class='year-img'>
           <image src='../../images/welcome/2017.png'></image>
         </view>
-        <view class='author'>策划制作：八桂科创</view>
+        <view class='author'>策划制作：网络中心大数据、八桂科创团队</view>
         <view class='qrCode-wrap'>
           <image src="../../images/welcome/qrCode.png"></image>
         </view>
@@ -161,5 +171,10 @@
     </swiper-item>
   </swiper>
 
-
+  <view class='arrow left-arrow' bindtap="prevSwiper">
+    <image src='../../images/left_arrow.png'></image>
+  </view>
+  <view class='arrow right-arrow' bindtap="nextSwiper">
+    <image src='../../images/right_arrow.png'></image>
+  </view>
 </view>
