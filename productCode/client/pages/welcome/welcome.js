@@ -9,7 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    animation:"",
     condition1: true,
     condition2: true,
     condition3: true,
@@ -53,18 +52,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.animation = wx.createAnimation();
+
   },
 
   onShow: function () {
-    var animation = wx.createAnimation();
-    animation.rotate(360).step();
-    this.setData({ animation: animation.export() });
+
   },
-  rotate: function () {
-    this.animation.rotate(Math.random() * 720 - 360).step()
-    this.setData({ animation: this.animation.export() })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
