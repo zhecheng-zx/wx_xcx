@@ -1,7 +1,7 @@
 <view class="containers">
   <swiper vertical='{{vertical}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
     <swiper-item>
-      <view class='page lessText'>
+      <view class='page lessText' animation="{{animation}}">
         <image src="../../images/welcome/bg_1.jpg"></image>
         <view class='first text'>
           {{userName}}，您好！
