@@ -147,7 +147,7 @@
       <view class='page'>
         <image src='../../images/welcome/bg_7.jpg'></image>
         <view class='title'>2017年广西科技厅OA系统年度使用报告</view>
-        <view class='summary-wrap'>
+        <view class='summary-wrap' animation="{{animationData}}" style='opacity: {{summaryOpa}}'>
           <view class='keyWordText'>你的年度关键词</view>
           <view class='subInfo'>OA系统智能助理预测2018</view>
 

@@ -37,15 +37,22 @@ Page({
     summary: '从今天起做一个幸福的人，努力工作、读书、旅行、 运动、保持好的心情',
     opacity: 0,
     current: 0,
-    swiperItemNum: 7
+    swiperItemNum: 7,
+    animationData: {},
+    summaryOpa: 0.2
   },
 
   swiperChange: function (e) {
+    
     this.setData({
-      opacity: 0
+      opacity: 0,
+      current: e.detail.current
     });
     this.fadeInAnimate();
-    console.log('change')
+  
+    if (this.data.current + 2 == this.data.swiperItemNum){
+      this.imgAnimate();
+    }
   },
 
   fadeInAnimate: function (e) {
@@ -86,6 +93,20 @@ Page({
     }
   },
 
+  imgAnimate: function(){
+    var that = this;
+    setTimeout(function(){
+      that.setData({
+        summaryOpa: 1
+      })
+      that.animation.rotateY(180).step();
+      that.animation.rotateY(360).step();
+      that.setData({
+        animationData: that.animation.export()
+      });
+    }, 1200);   
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -110,6 +131,16 @@ Page({
    */
   onShow: function () {
     this.fadeInAnimate();
+
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation;    
+    this.setData({
+      animationData: animation.export()
+    });
   },
 
   /**
