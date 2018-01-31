@@ -5,18 +5,21 @@
         <image src="../../images/welcome/bg_1.jpg"></image>
         <view style='opacity: {{opacity}}'>
           <view class='first text'>
-            {{userName}}，您好！
+            您好，{{userName}}
           </view>
           <view class='second text'>
-            又至岁末
+            过去的一年您辛苦了
           </view>
           <view class='third text'>
-            你有没有回望这一年
+            又至岁末
           </view>
           <view class='forth text'>
-            每一个数据
+            你有没有回望这一年
           </view>
           <view class='fifth text'>
+            每一个数据
+          </view>
+          <view class='sixth text'>
             都是时光的标本
           </view>
         </view>
@@ -120,10 +123,10 @@
         <image src='../../images/welcome/bg_6.jpg'></image>
          <view style='opacity: {{opacity}}'>
         <view class='text first'>
-          每一条短信的提醒
+          每一条短信
         </view>
         <view class='text second'>
-          都是一次亲切的问候
+          都是一次贴心的提醒
         </view>
         <view class='text third'>
           2017年
@@ -157,7 +160,7 @@
         </view>
       </view>
     </swiper-item>
-    <swiper-item>
+    <swiper-item >
       <view class='page'>
         <image src='../../images/welcome/bg_8.jpg'></image>
         <view class='year-img'>

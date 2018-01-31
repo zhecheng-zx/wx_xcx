@@ -44,7 +44,6 @@ Page({
     this.setData({
       opacity: 0
     });
-
     this.fadeInAnimate();
     console.log('change')
   },
@@ -58,7 +57,7 @@ Page({
       }
 
       that.setData({
-        opacity: opa + 0.2
+        opacity: opa + 0.08
       })
     }, 300);
   },
