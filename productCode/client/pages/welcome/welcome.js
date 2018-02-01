@@ -37,16 +37,22 @@ Page({
     summary: '从今天起做一个幸福的人，努力工作、读书、旅行、 运动、保持好的心情',
     opacity: 0,
     current: 0,
-    swiperItemNum: 7
+    swiperItemNum: 7,
+    animationData: {},
+    summaryOpa: 0.2
   },
 
   swiperChange: function (e) {
-    this.setData({
-      opacity: 0
-    });
 
+    this.setData({
+      opacity: 0,
+      current: e.detail.current
+    });
     this.fadeInAnimate();
-    console.log('change')
+
+    if (this.data.current + 2 == this.data.swiperItemNum) {
+      this.imgAnimate();
+    }
   },
 
   fadeInAnimate: function (e) {
@@ -58,7 +64,7 @@ Page({
       }
 
       that.setData({
-        opacity: opa + 0.2
+        opacity: opa + 0.08
       })
     }, 300);
   },
@@ -87,6 +93,20 @@ Page({
     }
   },
 
+  imgAnimate: function () {
+    var that = this;
+    setTimeout(function () {
+      that.setData({
+        summaryOpa: 1
+      })
+      //that.animation.rotateY(180).step();
+      that.animation.rotateY(360).step();
+      that.setData({
+        animationData: that.animation.export()
+      });
+    }, 800);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -94,7 +114,7 @@ Page({
     var that = this;
 
     wx.setNavigationBarTitle({
-      title: "OA年度使用报告"//页面标题为路由参数
+      title: "2017年度OA使用报告"//页面标题为路由参数
     })
     that.panelData();
   },
@@ -111,6 +131,16 @@ Page({
    */
   onShow: function () {
     this.fadeInAnimate();
+
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation;
+    this.setData({
+      animationData: animation.export()
+    });
   },
 
   /**
@@ -168,7 +198,7 @@ Page({
         util.showSuccess('请求成功完成')
         var results = result.data;
         //console.log(results.data[0].pmb);
-        if (results.data[0].sdlw == null) {
+        if (results.data[0].bw == null) {
           var num = that.data.swiperItemNum;
           that.setData({
             condition1: false,
@@ -176,12 +206,22 @@ Page({
           });
         } else {
           that.setData({
-            receiveFiles: results.data[0].sdlw,
-            readFiles: results.data[0].yylw,
-            dealFiles: results.data[0].bjlw,
-            dealPercent: results.data[0].aa,
+            dealFiles: results.data[0].bw,
             morePercent: results.data[0].pmb
           });
+          if (results.data[0].zt == "神") {
+            that.setData({
+              dealPercent: "这一年您真是神一样的存在"
+            });
+          } else if (results.data[0].zt == "忙碌") {
+            that.setData({
+              dealPercent: "这一年您是在忙碌中度过的吧"
+            });
+          } else {
+            that.setData({
+              dealPercent: "新的一年您还要加把劲哦"
+            });
+          }
         }
 
       },
@@ -287,21 +327,25 @@ Page({
         if (result.status == 1 || !results.hasOwnProperty("data")) {
           that.setData({
             keyWord: '勤勤勉勉',
+            summary: '从今天起做一个幸福的人，努力工作、读书、旅行、运动、保持好的心情。',
             imageUrl: '../../images/welcome/keyword-img3.png'
           });
         } else if (results.data[0].pj == "工作狂") {
           that.setData({
             keyWord: '工作狂',
+            summary: '虽然你认真工作的样子最迷人，但是也要保重身体哦。',
             imageUrl: '../../images/welcome/keyword-img2.png'
           });
         } else if (results.data[0].pj == "兢兢业业") {
           that.setData({
             keyWord: '兢兢业业',
+            summary: '世界会向那些有目标和远见的人让路。',
             imageUrl: '../../images/welcome/keyword-img1.png'
           });
         } else {
           that.setData({
             keyWord: '勤勤勉勉',
+            summary: '从今天起做一个幸福的人，努力工作、读书、旅行、运动、保持好的心情。',
             imageUrl: '../../images/welcome/keyword-img3.png'
           });
         }

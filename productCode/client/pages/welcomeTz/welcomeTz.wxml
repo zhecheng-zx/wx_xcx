@@ -14,14 +14,14 @@
             又至岁末
           </view>
           <view class='forth text'>
-            你有没有回望这一年
+            2017年OA的点滴
           </view>
           <view class='fifth text'>
-            每一个数据
+            我们细心帮你记录
           </view>
-          <view class='sixth text'>
-            都是时光的标本
-          </view>
+        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
         </view>
       </view>
     </swiper-item>
@@ -34,25 +34,19 @@
             <text class='big'>2017</text> 年
           </view>
           <view class='second text white'>
-            收到来文
-            <text class='middle'>{{receiveFiles}}</text> 个
+            你一共办文
+            <text class='middle'>{{dealFiles}}</text> 件
           </view>
           <view class='third text white'>
-            已阅公文
-            <text class='middle'>{{readFiles}}</text> 个
-          </view>
-          <view class='forth text white'>
-            办文
-            <text class='middle'>{{dealFiles}}</text> 个
-          </view>
-          <view class='fifth text white'>
-            按期办结率为
-            <text class='middle'>{{dealPercent}}</text>
-          </view>
-          <view class='sixth text white'>
-            超过了
+            超过
             <text class='middle'>{{morePercent}}</text> 的厅OA用户
           </view>
+          <view class='forth text white'>
+            {{dealPercent}}
+          </view>
+        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
         </view>
       </view>
     </swiper-item>
@@ -69,12 +63,15 @@
             不知不觉我们又走过了一年
           </view>
           <view class='third text'>
-            今年您共登录厅OA系统
+            这一年，您一共登录厅OA系统
             <text class='middle'>{{oaNum}}</text> 次
           </view>
           <view class='forth text'>
-            在线时长共
+            累计在线时长超过
             <text class='middle'>{{oaMinute}}</text> 分钟
+          </view>
+          <view class='fifth text'>
+            感谢您的不离不弃
           </view>
         </view>
         <!--
@@ -89,6 +86,9 @@
         <view class='chart-wrap'>
           <image src='../../images/welcome/line.png'></image>
         </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
+        </view>
       </view>
     </swiper-item>
     <!-- </view>    -->
@@ -96,23 +96,26 @@
     <swiper-item wx:if="{{condition3==true}}">
       <view class='page lessText'>
         <image src='../../images/welcome/bg_5.jpg'></image>
-         <view style='opacity: {{opacity}}'>
-        <view class='text first white bigBox'>
-          <text class='big'>2017</text>年
+        <view style='opacity: {{opacity}}'>
+          <view class='text first white bigBox'>
+            <text class='big'>2017</text>年
+          </view>
+          <view class='text second white'>
+            一共出差
+            <text class='middle'>{{businessTripNum}}</text> 次
+          </view>
+          <view class='text third white'>
+            乘坐
+            <text class='middle'>{{businessTripMonth}}</text>
+          </view>
+          <view class='text forth white'>
+            您的足迹遍布
+            <text class='middle'>{{businessTripCity}}</text>
+            <view class='subText'> 每一次出差想必都有别样的工作记忆吧！</view>
+          </view>
         </view>
-        <view class='text second white'>
-          一共出差
-          <text class='middle'>{{businessTripNum}}</text> 次
-        </view>
-        <view class='text third white'>
-          出差方式
-          <text class='middle'>{{businessTripMonth}}</text>
-        </view>
-        <view class='text forth white'>
-          足迹遍布
-          <text class='middle'>{{businessTripCity}}</text>
-          <view class='subText'> 每一次出差想必都有别样的工作记忆吧！</view>
-        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
         </view>
       </view>
     </swiper-item>
@@ -121,24 +124,27 @@
     <swiper-item wx:if="{{condition4==true}}">
       <view class='page lessText'>
         <image src='../../images/welcome/bg_6.jpg'></image>
-         <view style='opacity: {{opacity}}'>
-        <view class='text first'>
-          每一条短信
+        <view style='opacity: {{opacity}}'>
+          <view class='text first'>
+            这一年，您肯定没想到
+          </view>
+          <view class='text second'>
+            发送短信
+            <text class='middle'>{{sendMsgNum}}</text> 条短信
+          </view>
+          <view class='text third'>
+            接收提醒短信
+            <text class='middle'>{{receivedMsgNum}}</text> 条
+          </view>
+          <view class='text forth'>
+            每一条短信
+          </view>
+          <view class='text fifth'>
+            都是一次贴心的提醒。
+          </view>
         </view>
-        <view class='text second'>
-          都是一次贴心的提醒
-        </view>
-        <view class='text third'>
-          2017年
-        </view>
-        <view class='text forth'>
-          发送短信
-          <text class='middle'>{{sendMsgNum}}</text> 条
-        </view>
-        <view class='text fifth'>
-          接收短信
-          <text class='middle'>{{receivedMsgNum}}</text> 条
-        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
         </view>
       </view>
     </swiper-item>
@@ -157,10 +163,14 @@
 
           <view class='keyWord'>{{keyWord}}</view>
           <view class='summary'>{{summary}}</view>
+
+        </view>
+        <view class='qrCode-wrap'>
+          <image src="../../images/welcome/qrCode.png"></image>
         </view>
       </view>
     </swiper-item>
-    <swiper-item >
+    <swiper-item>
       <view class='page'>
         <image src='../../images/welcome/bg_8.jpg'></image>
         <view class='year-img'>
