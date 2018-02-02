@@ -26,7 +26,7 @@ page {
   font-size: 32rpx;
   color: #333;
   position: absolute;
-  left: 100rpx;
+  left: 70rpx;
 }
 
 .page.lessText .text {
@@ -42,54 +42,63 @@ page {
 }
 
 .containers .page .middle {
-  font-size: 40rpx !important;
+  font-size: 42rpx !important;
+  color: #f3ae1c;
 }
 
 .containers .page.lessText .middle {
-  font-size: 40rpx !important;
+  font-size: 44rpx !important;
+  color: #f3ae1c;
 }
 
 .first {
-  top: 120rpx;
+  top: 110rpx;
 }
 
 .bigBox, .page.lessText .first {
-  top: 130rpx !important;
+  top: 100rpx !important;
 }
 
 .second {
-  top: 180rpx;
+  top: 165rpx;
 }
 
 .page.lessText .second {
-  top: 190rpx;
+  top: 160rpx;
 }
 
 .third {
-  top: 240rpx;
+  top: 225rpx;
 }
 
 .page.lessText .third {
-  top: 250rpx;
+  top: 220rpx;
 }
 
 .forth {
-  top: 300rpx;
+  top: 385rpx;
   right: 10%;
 }
 
 .page.lessText .forth {
-  top: 310rpx;
+  top: 280rpx;
 }
 
 .fifth {
-  top: 370rpx;
+  top: 355rpx;
 }
-
+.page.lessText .fifth {
+  top: 340rpx;
+}
 .sixth {
-  top: 430rpx;
+  top: 415rpx;
 }
-
+.page.lessText .sixth {
+  top: 400rpx;
+}
+.page.lessText .sixth1 {
+  top: 410rpx;
+}
 .blue {
   color: #009cff !important;
 }
@@ -168,7 +177,13 @@ page {
   width: 140rpx;
   height: 140rpx;
 }
-
+.exit {
+  position: absolute;
+  bottom: 30rpx;
+  left: 20rpx;
+  font-size: 24rpx;
+  color: #818085;
+}
 .author {
   width: 100%;
   text-align: center;
@@ -176,6 +191,14 @@ page {
   color: #818085;
   position: absolute;
   top: calc(15% + 660rpx);
+}
+.wish{
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #818085;
+  position: absolute;
+  top: calc(15% + 710rpx);
 }
 
 .title {

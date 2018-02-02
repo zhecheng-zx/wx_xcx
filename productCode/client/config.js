@@ -15,6 +15,7 @@ var config = {
         host2,
         loginURL1: `${host2}/xcxLogin`,
         changPwd: `${host2}/changPwd`,
+        validate: `${host2}/xcxValidate`,
         firstPage: `${host2}/xcxOaFirstPage`,
         secondPage: `${host2}/xcxOaSecondPage`,
         thirdPage: `${host2}/xcxOaThirdPage`,

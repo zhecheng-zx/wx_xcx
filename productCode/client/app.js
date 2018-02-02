@@ -9,6 +9,8 @@ App({
     },
     data: {
       loginFlag: "0",
-      userName: ""
+      userName: "",
+      token:"",
+      role:""
     }  
 })

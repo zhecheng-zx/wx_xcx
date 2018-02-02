@@ -77,7 +77,7 @@ Page({
     console.log("新密码：" + this.data.userPwd);
     var that = this;
     wx.request({
-      url: `${config.service.changPwd}`, //`${config.service.loginURL1}`,
+      url: `${config.service.changPwd}`,//'http://localhost:8080/mis-web/platform/changPwd',// //`${config.service.loginURL1}`,
       data: { username: '' + getApp().data.userName, password: '' + that.data.userPwd },
       header: {
         "Content-Type": "application/json"

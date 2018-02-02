@@ -26,7 +26,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: `${config.service.validate}`,
+      data: { token: '' + wx.getStorageSync('token') },
+      header: {
+        "Content-Type": "application/json"
+      },
+      success(result) {
+        //util.showSuccess('请求成功完成')
+        var results = result.data;
+        var tableData = results.data;
+        if (results.status != 2) {
+          return;
+        } else {
+          if (getApp().data.role == 1) {
+            wx.switchTab({ url: '/pages/secondPage/secondPage' });
+          }else{
+            wx.redirectTo({ url: '/pages/welcome/welcome' });
+          }
+         
+        }
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    });
   },
 
   /**
@@ -91,8 +116,8 @@ Page({
 
     var that = this;
     wx.request({
-      url: `${config.service.loginURL1}`,//'http://localhost:8080/mis-web/platform/changPwd', //
-      data: { username: '' + that.data.userName, password: '' + that.data.userPwd },
+      url: `${config.service.loginURL1}`,//'http://localhost:8080/mis-web/platform/xcxLogin',//,//'http://localhost:8080/mis-web/platform/changPwd', //
+      data: { username: '' + that.data.userName, password: '' + that.data.userPwd, token: getApp().data.token },
       header: {
         "Content-Type": "application/json"
       },
@@ -100,20 +125,52 @@ Page({
         //util.showSuccess('请求成功完成')
         var results = result.data;
         var tableData = results.data;
+        if (results.status == 2)
+          if (results.data[0].role == "1") {
+            wx.switchTab({ url: '/pages/secondPage/secondPage' });
+          }else{
+            wx.redirectTo({ url: '/pages/welcome/welcome' });
+          }
         if (results.status != 1 && results.data.length>=1) {
           getApp().data.loginFlag = "1";
           if (results.data[0].role=="1"){
             getApp().data.userName = results.data[0].realname;
+            wx.setStorage({
+              key: "userName",
+              data: results.data[0].realname
+            })
+            wx.setStorage({
+              key: "role",
+              data: results.data[0].role
+            })
+            wx.setStorage({
+              key: "token",
+              data: results.data[0].token
+            })
             wx.switchTab({ url: '/pages/secondPage/secondPage' });
           }else{
+            /** 
             if (results.data[0].flag == "0") {
               //util.showModel('系统提示', '首次登录带你去修改密码');
               getApp().data.userName = results.data[0].username;
               wx.navigateTo({ url: '/pages/changPwd/changPwd' });
             }else{
+              */
               getApp().data.userName = results.data[0].realname;
+              wx.setStorage({
+                key: "userName",
+                data: results.data[0].realname
+              })
+              wx.setStorage({
+                key: "role",
+                data: results.data[0].role
+              })
+              wx.setStorage({
+                key: "token",
+                data: results.data[0].token
+              })
               wx.redirectTo({ url: '/pages/welcome/welcome' });
-            }
+            //}
             
           }
           

@@ -39,9 +39,13 @@ Page({
     current: 0,
     swiperItemNum: 7,
     animationData: {},
+    ccdr:'',
     summaryOpa: 0.2
   },
-
+  exit: function () {
+    wx.clearStorage();
+    wx.redirectTo({ url: '/pages/login/login' });
+  },
   swiperChange: function (e) {
     
     this.setData({
@@ -186,11 +190,11 @@ Page({
     //util.showBusy('请求中...');
     var that = this;
     that.setData({
-      userName: getApp().data.userName
+      userName: wx.getStorageSync('userName')
     });
     wx.request({
       url: `${config.service.firstPage}`,
-      data: { username: getApp().data.userName },
+      data: { username: wx.getStorageSync('userName') },
       header: {
         "Content-Type": "application/json"
       },
@@ -232,7 +236,7 @@ Page({
     });
     wx.request({
       url: `${config.service.secondPage}`,
-      data: { username: getApp().data.userName },
+      data: { username: wx.getStorageSync('userName') },
       header: {
         "Content-Type": "application/json"
       },
@@ -260,7 +264,7 @@ Page({
     });
     wx.request({
       url: `${config.service.thirdPage}`,
-      data: { username: getApp().data.userName },
+      data: { username: wx.getStorageSync('userName') },
       header: {
         "Content-Type": "application/json"
       },
@@ -274,6 +278,11 @@ Page({
             swiperItemNum: num - 1
           });
         } else {
+          if (parseInt(results.data[0].cccs)>3){
+            that.setData({
+              ccdr: '出差达人，'
+            });
+          }
           that.setData({
             businessTripNum: results.data[0].cccs,
             businessTripMonth: results.data[0].ccfs == null ? '无' : results.data[0].ccfs,
@@ -289,7 +298,7 @@ Page({
     });
     wx.request({
       url: `${config.service.fourthPage}`,
-      data: { username: getApp().data.userName },
+      data: { username: wx.getStorageSync('userName') },
       header: {
         "Content-Type": "application/json"
       },
@@ -317,7 +326,7 @@ Page({
     });
     wx.request({
       url: `${config.service.finalPage}`,
-      data: { username: getApp().data.userName },
+      data: { username: wx.getStorageSync('userName') },
       header: {
         "Content-Type": "application/json"
       },
@@ -333,7 +342,7 @@ Page({
         } else if (results.data[0].pj == "工作狂") {
           that.setData({
             keyWord: '工作狂',
-            summary:'虽然你认真工作的样子最迷人，但是也要保重身体哦。',
+            summary:'虽然您认真工作的样子最迷人，但是也要保重身体哦。',
             imageUrl: '../../images/welcome/keyword-img2.png'
           });
         } else if (results.data[0].pj == "兢兢业业") {
